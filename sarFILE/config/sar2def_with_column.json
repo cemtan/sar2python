@@ -1,0 +1,4172 @@
+{
+    "hpux_11.11": {
+        "options": {
+          "a": {
+            "title": "Use of File Access Routines",
+            "data": [
+              {
+                "title": "USE OF FILE ACCESS SYSTEM ROUTINES",
+                "columntitle": "iget/s namei/s dirbk/s",
+                "column": "1 2 3 4 5"
+              }
+            ]
+          },
+          "b": {
+            "title": "Buffer Activity",
+            "data": [
+              {
+                "title": "BUFFER ACTIVITY PART 1",
+                "columntitle": "bread/s bwrit/s lread/s lwrit/s pread/s pwrit/s",
+                "column": "1 2 3 4 5 6 9 10"
+              },
+              {
+                "title": "BUFFER ACTIVITY PART 2",
+                "columntitle": "%rcache %wcache",
+                "column": "1 2 7 8"
+              }
+            ]
+          },
+          "c": {
+            "title": "Statistics of System Calls",
+            "data": [
+              {
+                "title": "NUMBER OF CHARACTERS TRANSFERRED BY R/W SYSTEM CALLS",
+                "columntitle": "rchar/s wchar/s",
+                "column": "1 2 8 9"
+              },
+              {
+                "title": "NUMBER OF SYSTEM CALLS",
+                "columntitle": "scall/s",
+                "column": "1 2 3"
+              },
+              {
+                "title": "R/W FORK AND EXEC SYSTEM CALLS",
+                "columntitle": "sread/s swrit/s fork/s exec/s",
+                "column": "1 2 4 5 6 7"
+              }
+            ]
+          },
+          "d": {
+            "title": "Disk I/O & Statistics",
+            "data": [
+              {
+                "title": "NUMBER OF TRANSFERS",
+                "columntitle": "r+w/s blks/s",
+                "column": "1 2 6 7"
+              },
+              {
+                "title": "NUMBER OF REQUESTS",
+                "columntitle": "avque",
+                "column": "1 2 5"
+              },
+              {
+                "title": "SERVICE AND WAIT TIMEi",
+                "columntitle": "avwait avserv",
+                "column": "1 2 8 9"
+              },
+              {
+                "title": "BUSY TIME",
+                "columntitle": "%busy",
+                "column": "1 2 4"
+              }
+            ]
+          },
+          "Sm": {
+            "title": "Number of System V Calls",
+            "data": [
+              {
+                "title": "NUMBER OF SYSTEM V CALLS",
+                "columntitle": "msg/s sema/s select/s",
+                "column": "1 2 3 4 5"
+              }
+            ]
+          },
+          "Mq": {
+            "title": "Run & Swap Queue",
+            "data": [
+              {
+                "title": "RUN AND SWAP QUEUE",
+                "columntitle": "runq-sz swpq-sz",
+                "column": "1 2 4 6"
+              },
+              {
+                "title": "RUN AND SWAP QUEUE %",
+                "columntitle": "%runocc %swpocc",
+                "column": "1 2 5 7"
+              }
+            ]
+          },
+          "Mu": {
+            "title": "Processor Activity",
+            "data": [
+              {
+                "title": "PROCESSOR ACTIVITY",
+                "columntitle": "%usr %sys %wio %idle",
+                "column": "1 2 4 5 6 7"
+              }
+            ]
+          },
+          "v": {
+            "title": "Kernel Tables",
+            "data": [
+              {
+                "title": "STATUS OF PROCESS",
+                "columntitle": "proc-sz inod-sz file-sz",
+                "column": "1 2 5 7 9"
+              },
+              {
+                "title": "STATUS OF PROCESS",
+                "columntitle": "proc-ov inod-ov file-ov",
+                "column": "1 2 6 8 10"
+              }
+            ]
+          },
+          "w": {
+            "title": "Swap & System Switching",
+            "data": [
+              {
+                "title": "NUMBER OF PROCESS SWAP IN/OUT",
+                "columntitle": "swpin/s swpot/s",
+                "column": "1 2 3 5"
+              },
+              {
+                "title": "NUMBER OF 512-BYTE UNITS TRANSFERRED FOR SWAP IN/OUT",
+                "columntitle": "bswin/s bswot/s",
+                "column": "1 2 4 6"
+              },
+              {
+                "title": "SYSTEM SWITCHING ACTIVITY",
+                "columntitle": "pswch/s",
+                "column": "1 2 7"
+              }
+            ]
+          },
+          "y": {
+            "title": "TTY Device Activity",
+            "data": [
+              {
+                "title": "TTY DEVICE ACTIVITY",
+                "columntitle": "rawch/s canch/s outch/s rcvin/s xmtin/s mdmin/s",
+                "column": "1 2 3 4 5 6 7 8"
+              }
+            ]
+          }
+        },
+        "special": "d Mq Mu"
+      },
+      "hpux_11.23": {
+        "options": {
+          "a": {
+            "title": "Use of File Access Routines",
+            "data": [
+              {
+                "title": "USE OF FILE ACCESS SYSTEM ROUTINES",
+                "columntitle": "iget/s namei/s dirbk/s",
+                "column": "1 2 3 4 5"
+              }
+            ]
+          },
+          "b": {
+            "title": "Buffer Activity",
+            "data": [
+              {
+                "title": "BUFFER ACTIVITY PART 1",
+                "columntitle": "bread/s bwrit/s lread/s lwrit/s pread/s pwrit/s",
+                "column": "1 2 3 4 5 6 9 10"
+              },
+              {
+                "title": "BUFFER ACTIVITY PART 2",
+                "columntitle": "%rcache %wcache",
+                "column": "1 2 7 8"
+              }
+            ]
+          },
+          "c": {
+            "title": "Statistics of System Calls",
+            "data": [
+              {
+                "title": "NUMBER OF CHARACTERS TRANSFERRED BY R/W SYSTEM CALLS",
+                "columntitle": "rchar/s wchar/s",
+                "column": "1 2 8 9"
+              },
+              {
+                "title": "NUMBER OF SYSTEM CALLS",
+                "columntitle": "scall/s",
+                "column": "1 2 3"
+              },
+              {
+                "title": "R/W FORK AND EXEC SYSTEM CALLS",
+                "columntitle": "sread/s swrit/s fork/s exec/s",
+                "column": "1 2 4 5 6 7"
+              }
+            ]
+          },
+          "d": {
+            "title": "Disk I/O & Statistics",
+            "data": [
+              {
+                "title": "NUMBER OF TRANSFERS",
+                "columntitle": "r+w/s blks/s",
+                "column": "1 2 6 7"
+              },
+              {
+                "title": "NUMBER OF REQUESTS",
+                "columntitle": "avque",
+                "column": "1 2 5"
+              },
+              {
+                "title": "SERVICE AND WAIT TIMEi",
+                "columntitle": "avwait avserv",
+                "column": "1 2 8 9"
+              },
+              {
+                "title": "BUSY TIME",
+                "columntitle": "%busy",
+                "column": "1 2 4"
+              }
+            ]
+          },
+          "Sm": {
+            "title": "Number of System V Calls",
+            "data": [
+              {
+                "title": "NUMBER OF SYSTEM V CALLS",
+                "columntitle": "msg/s sema/s select/s",
+                "column": "1 2 3 4 5"
+              }
+            ]
+          },
+          "Mq": {
+            "title": "Run & Swap Queue",
+            "data": [
+              {
+                "title": "RUN AND SWAP QUEUE",
+                "columntitle": "runq-sz swpq-sz",
+                "column": "1 2 4 6"
+              },
+              {
+                "title": "RUN AND SWAP QUEUE %",
+                "columntitle": "%runocc %swpocc",
+                "column": "1 2 5 7"
+              }
+            ]
+          },
+          "Mu": {
+            "title": "Processor Activity",
+            "data": [
+              {
+                "title": "PROCESSOR ACTIVITY",
+                "columntitle": "%usr %sys %wio %idle",
+                "column": "1 2 4 5 6 7"
+              }
+            ]
+          },
+          "v": {
+            "title": "Kernel Tables",
+            "data": [
+              {
+                "title": "STATUS OF PROCESS",
+                "columntitle": "proc-sz inod-sz file-sz",
+                "column": "1 2 5 7 9"
+              },
+              {
+                "title": "STATUS OF PROCESS",
+                "columntitle": "proc-ov inod-ov file-ov",
+                "column": "1 2 6 8 10"
+              }
+            ]
+          },
+          "w": {
+            "title": "Swap & System Switching",
+            "data": [
+              {
+                "title": "NUMBER OF PROCESS SWAP IN/OUT",
+                "columntitle": "swpin/s swpot/s",
+                "column": "1 2 3 5"
+              },
+              {
+                "title": "NUMBER OF 512-BYTE UNITS TRANSFERRED FOR SWAP IN/OUT",
+                "columntitle": "bswin/s bswot/s",
+                "column": "1 2 4 6"
+              },
+              {
+                "title": "SYSTEM SWITCHING ACTIVITY",
+                "columntitle": "pswch/s",
+                "column": "1 2 7"
+              }
+            ]
+          },
+          "y": {
+            "title": "TTY Device Activity",
+            "data": [
+              {
+                "title": "TTY DEVICE ACTIVITY",
+                "columntitle": "rawch/s canch/s outch/s rcvin/s xmtin/s mdmin/s",
+                "column": "1 2 3 4 5 6 7 8"
+              }
+            ]
+          }
+        },
+        "special": "d Mq Mu"
+      },
+      "hpux_11.31": {
+        "options": {
+          "a": {
+            "title": "Use of File Access Routines",
+            "data": [
+              {
+                "title": "USE OF FILE ACCESS SYSTEM ROUTINES",
+                "columntitle": "iget/s namei/s dirbk/s",
+                "column": "1 2 3 4 5"
+              }
+            ]
+          },
+          "b": {
+            "title": "Buffer Activity",
+            "data": [
+              {
+                "title": "BUFFER ACTIVITY PART 1",
+                "columntitle": "bread/s bwrit/s lread/s lwrit/s pread/s pwrit/s",
+                "column": "1 2 3 4 5 6 9 10"
+              },
+              {
+                "title": "BUFFER ACTIVITY PART 2",
+                "columntitle": "%rcache %wcache",
+                "column": "1 2 7 8"
+              }
+            ]
+          },
+          "c": {
+            "title": "Statistics of System Calls",
+            "data": [
+              {
+                "title": "NUMBER OF CHARACTERS TRANSFERRED BY R/W SYSTEM CALLS",
+                "columntitle": "rchar/s wchar/s",
+                "column": "1 2 8 9"
+              },
+              {
+                "title": "NUMBER OF SYSTEM CALLS",
+                "columntitle": "scall/s",
+                "column": "1 2 3"
+              },
+              {
+                "title": "R/W FORK AND EXEC SYSTEM CALLS",
+                "columntitle": "sread/s swrit/s fork/s exec/s",
+                "column": "1 2 4 5 6 7"
+              }
+            ]
+          },
+          "Rd": {
+            "title": "Disk I/O & Statistics",
+            "data": [
+              {
+                "title": "NUMBER OF TRANSFERS",
+                "columntitle": "r/s w/s blks/s",
+                "column": "1 2 6 7 8"
+              },
+              {
+                "title": "NUMBER OF REQUESTS",
+                "columntitle": "avque",
+                "column": "1 2 5"
+              },
+              {
+                "title": "SERVICE AND WAIT TIME",
+                "columntitle": "avwait avserv",
+                "column": "1 2 9 10"
+              },
+              {
+                "title": "BUSY TIME",
+                "columntitle": "%busy",
+                "column": "1 2 4"
+              }
+            ]
+          },
+          "H": {
+            "title": "I/O Statistics & Utilization",
+            "data": [
+              {
+                "title": "NUMBER OF BYTES TRANSFERRED",
+                "columntitle": "t-put read write",
+                "column": "1 2 5 9 10"
+              },
+              {
+                "title": "NUMBER OF DATA TRANSFERS",
+                "columntitle": "IO/s r/s w/s",
+                "column": "1 2 6 7 8"
+              },
+              {
+                "title": "AVERAGE NUMBER OF REQUESTS",
+                "columntitle": "avque",
+                "column": "1 2 11"
+              },
+              {
+                "title": "AVERAGE WAIT AND SERVICE TIME",
+                "columntitle": "avwait avserv",
+                "column": "1 2 12 13"
+              },
+              {
+                "title": "UTILIZATION PERCENTAGE",
+                "columntitle": "%util",
+                "column": "1 2 4"
+              }
+            ]
+          },
+          "L": {
+            "title": "I/O Service Statistics",
+            "data": [
+              {
+                "title": "NUMBER OF READ AND WRITES",
+                "columntitle": "r/s w/s",
+                "column": "1 2 6 7"
+              },
+              {
+                "title": "NUMBER OF BYTES TRANSFERRED",
+                "columntitle": "blks/s",
+                "column": "1 2 8"
+              },
+              {
+                "title": "SERVICE AND WAIT TIME",
+                "columntitle": "avwait avserv",
+                "column": "1 2 9 10"
+              },
+              {
+                "title": "AVERAGE NUMBER OF REQUESTS",
+                "columntitle": "avque",
+                "column": "1 2 5"
+              },
+              {
+                "title": "BUSY TIME WHILE SERVICING",
+                "columntitle": "%busy",
+                "column": "1 2 4"
+              }
+            ]
+          },
+          "Sm": {
+            "title": "Number of System V Calls",
+            "data": [
+              {
+                "title": "NUMBER OF SYSTEM V CALLS",
+                "columntitle": "msg/s sema/s select/s",
+                "column": "1 2 3 4 5"
+              }
+            ]
+          },
+          "Mq": {
+            "title": "Run & Swap Queue",
+            "data": [
+              {
+                "title": "RUN AND SWAP QUEUE",
+                "columntitle": "runq-sz swpq-sz",
+                "column": "1 2 4 6"
+              },
+              {
+                "title": "RUN AND SWAP QUEUE %",
+                "columntitle": "%runocc %swpocc",
+                "column": "1 2 5 7"
+              }
+            ]
+          },
+          "Mu": {
+            "title": "Processor Activity",
+            "data": [
+              {
+                "title": "PROCESSOR ACTIVITY",
+                "columntitle": "%usr %sys %wio %idle",
+                "column": "1 2 4 5 6 7"
+              }
+            ]
+          },
+          "v": {
+            "title": "Kernel Tables",
+            "data": [
+              {
+                "title": "STATUS OF PROCESS",
+                "columntitle": "proc-sz inod-sz file-sz",
+                "column": "1 2 5 7 9"
+              },
+              {
+                "title": "STATUS OF PROCESS",
+                "columntitle": "proc-ov inod-ov file-ov",
+                "column": "1 2 6 8 10"
+              }
+            ]
+          },
+          "w": {
+            "title": "Swap & System Switching",
+            "data": [
+              {
+                "title": "NUMBER OF PROCESS SWAP IN/OUT",
+                "columntitle": "swpin/s swpot/s",
+                "column": "1 2 3 5"
+              },
+              {
+                "title": "NUMBER OF 512-BYTE UNITS TRANSFERRED FOR SWAP IN/OUT",
+                "columntitle": "bswin/s bswot/s",
+                "column": "1 2 4 6"
+              },
+              {
+                "title": "SYSTEM SWITCHING ACTIVITY",
+                "columntitle": "pswch/s",
+                "column": "1 2 7"
+              }
+            ]
+          },
+          "y": {
+            "title": "TTY Device Activity",
+            "data": [
+              {
+                "title": "TTY DEVICE ACTIVITY",
+                "columntitle": "rawch/s canch/s outch/s rcvin/s xmtin/s mdmin/s",
+                "column": "1 2 3 4 5 6 7 8"
+              }
+            ]
+          }
+        },
+        "special": "Rd H L Mq Mu"
+      },    
+  "redhat_3": {
+    "options": {
+      "b": {
+        "title": "I/O Rates",
+        "data": [
+          {
+            "title": "I/O TRANSACTION",
+            "columntitle": "tps rtps wtps",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "I/O TRANSFER RATE",
+            "columntitle": "bread/s bwrtn/s",
+            "column": "1 2 6 7"
+          }
+        ]
+      },
+      "B": {
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "title": "PAGING STATISTICS",
+            "columntitle": "pgpgin/s pgpgout/s",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "fault/s majflt/s",
+            "column": "1 2 5 6"
+          }
+        ]
+      },
+      "c": {
+        "title": "Process Creation Activity",
+        "data": [
+          {
+            "title": "PROCESS CREATION ACTIVITY",
+            "columntitle": "proc/s",
+            "column": "1 2 3"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "tps",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF SECTOR r/w",
+            "columntitle": "rd_sec/s wr_sec/s",
+            "column": "1 2 5 6"
+          }
+        ]
+      },
+      "I_SUM": {
+        "title": "Interrupt Activity",
+        "data": [
+          {
+            "title": "INTERRUPT ACTIVITY",
+            "columntitle": "intr/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "n_DEV": {
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "title": "NETWORK I/O",
+            "columntitle": "rxbyt/s txbyt/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NETWORK STATISTICS",
+            "columntitle": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s",
+            "column": "1 2 4 5 8 9 10"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "title": "NETWORK ERROR STATISTICS",
+            "columntitle": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s",
+            "column": "1 2 4 5 6 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "title": "NETWORK SOCKET STATISTICS",
+            "columntitle": "totsck tcpsck udpsck rawsck ip-frag",
+            "column": "1 2 3 4 5 6 7"
+          }
+        ]
+      },
+      "P_ALL": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%user %nice %system %iowait %idle",
+            "column": "1 2 4 5 6 7 8"
+          }
+        ]
+      },
+      "q": {
+        "title": "Process Queue",
+        "data": [
+          {
+            "title": "QUEUE LENGTH",
+            "columntitle": "runq-sz",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF PROCESSES",
+            "columntitle": "plist-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "LOAD AVERAGE",
+            "columntitle": "ldavg-1 ldavg-5 ldavg-15",
+            "column": "1 2 5 6 7"
+          }
+        ]
+      },
+      "r": {
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "title": "MEMORY UTILIZATION",
+            "columntitle": "kbmemfree kbmemused kbbuffers kbcached",
+            "column": "1 2 3 4 6 7"
+          },
+          {
+            "title": "SWAP UTILIZATION",
+            "columntitle": "kbswpfree kbswpused kbswpcad",
+            "column": "1 2 8 9 11"
+          },
+          {
+            "title": "MEMORY AND SWAP %",
+            "columntitle": "%memused %swpused",
+            "column": "1 2 5 10"
+          }
+        ]
+      },
+      "R": {
+        "title": "Memory Statistics",
+        "data": [
+          {
+            "title": "MEMORY STATISTICS",
+            "columntitle": "frmpg/s bufpg/s campg/s",
+            "column": "1 2 3 4 5"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "UNUSED CACHE ENTRIES",
+            "columntitle": "dentunusd",
+            "column": "1 2 3"
+          },
+          {
+            "title": "USED FILE HANDLES",
+            "columntitle": "file-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "USED INODE HANDLERS",
+            "columntitle": "inode-sz",
+            "column": "1 2 5"
+          },
+          {
+            "title": "SUPER BLOCK HANDLERS",
+            "columntitle": "super-sz",
+            "column": "1 2 6"
+          },
+          {
+            "title": "ALLOCATED DISK QUOTA ENTRIES",
+            "columntitle": "dquot-sz",
+            "column": "1 2 8"
+          },
+          {
+            "title": "QUEUED RT SIGNALS",
+            "columntitle": "rtsig-sz",
+            "column": "1 2 10"
+          },
+          {
+            "title": "KERNEL TABLES %",
+            "columntitle": "%super-sz %dquot-sz %rtsig-sz",
+            "column": "1 2 7 9 11"
+          }
+        ]
+      },
+      "w": {
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "cswch/s",
+            "column": "1 2 3"
+          }
+        ]
+      },
+      "W": {
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "title": "SWAPPING STATISTICS",
+            "columntitle": "pswpin/s pswpout/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rcvin/s xmtin/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV P_ALL"
+  },
+  "redhat_4": {
+    "options": {
+      "b": {
+        "title": "I/O Rates",
+        "data": [
+          {
+            "title": "I/O TRANSACTION",
+            "columntitle": "tps rtps wtps",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "I/O TRANSFER RATE",
+            "columntitle": "bread/s bwrtn/s",
+            "column": "1 2 6 7"
+          }
+        ]
+      },
+      "B": {
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "title": "PAGING STATISTICS",
+            "columntitle": "pgpgin/s pgpgout/s",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "fault/s majflt/s",
+            "column": "1 2 5 6"
+          }
+        ]
+      },
+      "c": {
+        "title": "Process Creation Activity",
+        "data": [
+          {
+            "title": "PROCESS CREATION ACTIVITY",
+            "columntitle": "proc/s",
+            "column": "1 2 3"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "tps",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF SECTOR r/w",
+            "columntitle": "rd_sec/s wr_sec/s",
+            "column": "1 2 5 6"
+          }
+        ]
+      },
+      "I_SUM": {
+        "title": "Interrupt Activity",
+        "data": [
+          {
+            "title": "INTERRUPT ACTIVITY",
+            "columntitle": "intr/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "n_DEV": {
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "title": "NETWORK I/O",
+            "columntitle": "rxbyt/s txbyt/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NETWORK STATISTICS",
+            "columntitle": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s",
+            "column": "1 2 4 5 8 9 10"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "title": "NETWORK ERROR STATISTICS",
+            "columntitle": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s",
+            "column": "1 2 4 5 6 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "title": "NETWORK SOCKET STATISTICS",
+            "columntitle": "totsck tcpsck udpsck rawsck ip-frag",
+            "column": "1 2 3 4 5 6 7"
+          }
+        ]
+      },
+      "P_ALL": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%user %nice %system %iowait %idle",
+            "column": "1 2 4 5 6 7 8"
+          }
+        ]
+      },
+      "q": {
+        "title": "Process Queue",
+        "data": [
+          {
+            "title": "QUEUE LENGTH",
+            "columntitle": "runq-sz",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF PROCESSES",
+            "columntitle": "plist-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "LOAD AVERAGE",
+            "columntitle": "ldavg-1 ldavg-5 ldavg-15",
+            "column": "1 2 5 6 7"
+          }
+        ]
+      },
+      "r": {
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "title": "MEMORY UTILIZATION",
+            "columntitle": "kbmemfree kbmemused kbbuffers kbcached",
+            "column": "1 2 3 5 6 7"
+          },
+          {
+            "title": "SWAP UTILIZATION",
+            "columntitle": "kbswpfree kbswpused kbswpcad",
+            "column": "1 2 8 9 11"
+          },
+          {
+            "title": "MEMORY AND SWAP %",
+            "columntitle": "%memused %swpused",
+            "column": "1 2 5 10"
+          }
+        ]
+      },
+      "R": {
+        "title": "Memory Statistics",
+        "data": [
+          {
+            "title": "MEMORY STATISTICS",
+            "columntitle": "frmpg/s bufpg/s campg/s",
+            "column": "1 2 3 4 5"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "UNUSED CACHE ENTRIES",
+            "columntitle": "dentunusd",
+            "column": "1 2 3"
+          },
+          {
+            "title": "USED FILE HANDLES",
+            "columntitle": "file-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "USED INODE HANDLERS",
+            "columntitle": "inode-sz",
+            "column": "1 2 5"
+          },
+          {
+            "title": "SUPER BLOCK HANDLERS",
+            "columntitle": "super-sz",
+            "column": "1 2 6"
+          },
+          {
+            "title": "ALLOCATED DISK QUOTA ENTRIES",
+            "columntitle": "dquot-sz",
+            "column": "1 2 8"
+          },
+          {
+            "title": "QUEUED RT SIGNALS",
+            "columntitle": "rtsig-sz",
+            "column": "1 2 10"
+          },
+          {
+            "title": "KERNEL TABLES %",
+            "columntitle": "%super-sz %dquot-sz %rtsig-sz",
+            "column": "1 2 7 9 11"
+          }
+        ]
+      },
+      "w": {
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "cswch/s",
+            "column": "1 2 3"
+          }
+        ]
+      },
+      "W": {
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "title": "SWAPPING STATISTICS",
+            "columntitle": "pswpin/s pswpout/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rcvin/s xmtin/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV P_ALL"
+  },
+  "redhat_5": {
+    "options": {
+      "b": {
+        "title": "I/O Rates",
+        "data": [
+          {
+            "title": "I/O TRANSACTION",
+            "columntitle": "tps rtps wtps",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "I/O TRANSFER RATE",
+            "columntitle": "bread/s bwrtn/s",
+            "column": "1 2 6 7"
+          }
+        ]
+      },
+      "B": {
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "title": "PAGING STATISTICS",
+            "columntitle": "pgpgin/s pgpgout/s",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "fault/s majflt/s",
+            "column": "1 2 5 6"
+          }
+        ]
+      },
+      "c": {
+        "title": "Process Creation Activity",
+        "data": [
+          {
+            "title": "PROCESS CREATION ACTIVITY",
+            "columntitle": "proc/s",
+            "column": "1 2 3"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "tps",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF SECTOR r/w",
+            "columntitle": "rd_sec/s wr_sec/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "I/O REQUESTS AND QUEUE LENGHT",
+            "columntitle": "avgrq-sz avgqu-sz",
+            "column": "1 2 7 8"
+          },
+          {
+            "title": "AVEARGE WAIT TIME",
+            "columntitle": "await",
+            "column": "1 2 9"
+          },
+          {
+            "title": "CPU PERCENTAGE of I/O",
+            "columntitle": "%util",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "I_SUM": {
+        "title": "Interrupt Activity",
+        "data": [
+          {
+            "title": "INTERRUPT ACTIVITY",
+            "columntitle": "intr/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "n_DEV": {
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "title": "NETWORK I/O",
+            "columntitle": "rxbyt/s txbyt/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NETWORK STATISTICS",
+            "columntitle": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s",
+            "column": "1 2 4 5 8 9 10"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "title": "NETWORK ERROR STATISTICS",
+            "columntitle": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s",
+            "column": "1 2 4 5 6 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "n_NFS": {
+        "title": "NFS Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "read/s write/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "call/s retrans/s access/s getatt/s",
+            "column": "1 2 3 4 7 8"
+          }
+        ]
+      },
+      "n_NFSD": {
+        "title": "NFSD Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "sread/s swrite/s",
+            "column": "1 2 10 11"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "scall/s badcall/s saccess/s sgetatt/s",
+            "column": "1 2 3 4 12 13"
+          },
+          {
+            "title": "NUMBER OF NETWORK PACKETS",
+            "columntitle": "packet/s udp/s tcp/s",
+            "column": "1 2 5 6 7"
+          },
+          {
+            "title": "NUMBER OF REPLY CACHE HITS AND MISSES",
+            "columntitle": "hit/s miss/s",
+            "column": "1 2 8 9"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "title": "NETWORK SOCKET STATISTICS",
+            "columntitle": "totsck tcpsck udpsck rawsck ip-frag",
+            "column": "1 2 3 4 5 6 7"
+          }
+        ]
+      },
+      "P_ALL": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%user %nice %system %iowait %steal %idle",
+            "column": "1 2 4 5 6 7 8 9"
+          }
+        ]
+      },
+      "q": {
+        "title": "Process Queue",
+        "data": [
+          {
+            "title": "QUEUE LENGTH",
+            "columntitle": "runq-sz",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF PROCESSES",
+            "columntitle": "plist-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "LOAD AVERAGE",
+            "columntitle": "ldavg-1 ldavg-5 ldavg-15",
+            "column": "1 2 5 6 7"
+          }
+        ]
+      },
+      "r": {
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "title": "MEMORY UTILIZATION",
+            "columntitle": "kbmemfree kbmemused kbbuffers kbcached",
+            "column": "1 2 3 4 6 7"
+          },
+          {
+            "title": "SWAP UTILIZATION",
+            "columntitle": "kbswpfree kbswpused kbswpcad",
+            "column": "1 2 8 9 11"
+          },
+          {
+            "title": "MEMORY AND SWAP %",
+            "columntitle": "%memused %swpused",
+            "column": "1 2 5 10"
+          }
+        ]
+      },
+      "R": {
+        "title": "Memory Statistics",
+        "data": [
+          {
+            "title": "MEMORY STATISTICS",
+            "columntitle": "frmpg/s bufpg/s campg/s",
+            "column": "1 2 3 4 5"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "UNUSED CACHE ENTRIES",
+            "columntitle": "dentunusd",
+            "column": "1 2 3"
+          },
+          {
+            "title": "USED FILE HANDLES",
+            "columntitle": "file-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "USED INODE HANDLERS",
+            "columntitle": "inode-sz",
+            "column": "1 2 5"
+          },
+          {
+            "title": "SUPER BLOCK HANDLERS",
+            "columntitle": "super-sz",
+            "column": "1 2 6"
+          },
+          {
+            "title": "ALLOCATED DISK QUOTA ENTRIES",
+            "columntitle": "dquot-sz",
+            "column": "1 2 8"
+          },
+          {
+            "title": "QUEUED RT SIGNALS",
+            "columntitle": "rtsig-sz",
+            "column": "1 2 10"
+          },
+          {
+            "title": "KERNEL TABLES %",
+            "columntitle": "%super-sz %dquot-sz %rtsig-sz",
+            "column": "1 2 7 9 11"
+          }
+        ]
+      },
+      "w": {
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "cswch/s",
+            "column": "1 2 3"
+          }
+        ]
+      },
+      "W": {
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "title": "SWAPPING STATISTICS",
+            "columntitle": "pswpin/s pswpout/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rcvin/s xmtin/s framerr/s prtyerr/s brk/s ovrun/s",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV P_ALL"
+  },
+  "redhat_6": {
+    "options": {
+      "b": {
+        "title": "I/O Rates",
+        "data": [
+          {
+            "title": "I/O TRANSACTION",
+            "columntitle": "tps rtps wtps",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "I/O TRANSFER RATE",
+            "columntitle": "bread/s bwrtn/s",
+            "column": "1 2 6 7"
+          }
+        ]
+      },
+      "B": {
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "title": "PAGING STATISTICS",
+            "columntitle": "pgpgin/s pgpgout/s",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "fault/s majflt/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "PAGE OPERATIONS",
+            "columntitle": "pgfree/s pgscank/s pgscand/s pgsteal/s",
+            "column": "1 2 7 8 9 10"
+          },
+          {
+            "title": "EFFICIENCY OF PAGE RECLAIM",
+            "columntitle": "%vmeff",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "tps",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF SECTOR r/w",
+            "columntitle": "rd_sec/s wr_sec/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "I/O REQUESTS AND QUEUE LENGHT",
+            "columntitle": "avgrq-sz avgqu-sz",
+            "column": "1 2 7 8"
+          },
+          {
+            "title": "AVEARGE WAIT TIME",
+            "columntitle": "await",
+            "column": "1 2 9"
+          },
+          {
+            "title": "CPU PERCENTAGE of I/O",
+            "columntitle": "%util",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "I_SUM": {
+        "title": "Interrupt Activity",
+        "data": [
+          {
+            "title": "INTERRUPT ACTIVITY",
+            "columntitle": "intr/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "n_DEV": {
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "title": "NETWORK I/O",
+            "columntitle": "rxkB/s txkB/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NETWORK STATISTICS",
+            "columntitle": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s",
+            "column": "1 2 4 5 8 9 10"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "title": "NETWORK ERROR STATISTICS",
+            "columntitle": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s",
+            "column": "1 2 4 5 6 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "n_NFS": {
+        "title": "NFS Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "read/s write/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "call/s retrans/s access/s getatt/s",
+            "column": "1 2 3 4 7 8"
+          }
+        ]
+      },
+      "n_NFSD": {
+        "title": "NFSD Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "sread/s swrite/s",
+            "column": "1 2 10 11"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "scall/s badcall/s saccess/s sgetatt/s",
+            "column": "1 2 3 4 12 13"
+          },
+          {
+            "title": "NUMBER OF NETWORK PACKETS",
+            "columntitle": "packet/s udp/s tcp/s",
+            "column": "1 2 5 6 7"
+          },
+          {
+            "title": "NUMBER OF REPLY CACHE HITS AND MISSES",
+            "columntitle": "hit/s miss/s",
+            "column": "1 2 8 9"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "title": "NETWORK SOCKET STATISTICS",
+            "columntitle": "totsck tcpsck udpsck rawsck ip-frag tcp-tw",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      },
+      "P_ALL": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%user %nice %system %iowait %steal %idle",
+            "column": "1 2 4 5 6 7 8 9"
+          }
+        ]
+      },
+      "q": {
+        "title": "Process Queue",
+        "data": [
+          {
+            "title": "QUEUE LENGTH",
+            "columntitle": "runq-sz",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF PROCESSES",
+            "columntitle": "plist-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "LOAD AVERAGE",
+            "columntitle": "ldavg-1 ldavg-5 ldavg-15",
+            "column": "1 2 5 6 7"
+          }
+        ]
+      },
+      "r": {
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "title": "MEMORY UTILIZATION",
+            "columntitle": "kbmemfree kbmemused kbbuffers kbcached kbcommit",
+            "column": "1 2 3 4 6 7 8"
+          },
+          {
+            "title": "MEMORY UTILIZATION %",
+            "columntitle": "%memused %commit",
+            "column": "1 2 5 9"
+          }
+        ]
+      },
+      "R": {
+        "title": "Memory Statistics",
+        "data": [
+          {
+            "title": "MEMORY STATISTICS",
+            "columntitle": "frmpg/s bufpg/s campg/s",
+            "column": "1 2 3 4 5"
+          }
+        ]
+      },
+      "S": {
+        "title": "Swap Utilization",
+        "data": [
+          {
+            "title": "SWAP UTILIZATION",
+            "columntitle": "kbswpfree kbswpused kbswpcad",
+            "column": "1 2 3 4 6"
+          },
+          {
+            "title": "SWAP UTILIZATION %",
+            "columntitle": "%swpused %swpcad",
+            "column": "1 2 5 7"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "UNUSED CACHE ENTRIES",
+            "columntitle": "dentunusd",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF FILE AND INODE HANDLERS",
+            "columntitle": "file-nr inode-nr",
+            "column": "1 2 4 5"
+          },
+          {
+            "title": "NUMBER OF PSEUDO-TERMINALS",
+            "columntitle": "pty-nr",
+            "column": "1 2 6"
+          }
+        ]
+      },
+      "w": {
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "title": "PROCESS CREATION ACTIVITY",
+            "columntitle": "proc/s",
+            "column": "1 2 3"
+          },
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "cswch/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "W": {
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "title": "SWAPPING STATISTICS",
+            "columntitle": "pswpin/s pswpout/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rcvin/s xmtin/s framerr/s prtyerr/s brk/s ovrun/s",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV P_ALL"
+  },
+  "redhat_7": {
+    "options": {
+      "b": {
+        "title": "I/O Rates",
+        "data": [
+          {
+            "title": "I/O TRANSACTION",
+            "columntitle": "tps rtps wtps",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "I/O TRANSFER RATE",
+            "columntitle": "bread/s bwrtn/s",
+            "column": "1 2 6 7"
+          }
+        ]
+      },
+      "B": {
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "title": "PAGING STATISTICS",
+            "columntitle": "pgpgin/s pgpgout/s",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "fault/s majflt/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "PAGE OPERATIONS",
+            "columntitle": "pgfree/s pgscank/s pgscand/s pgsteal/s",
+            "column": "1 2 7 8 9 10"
+          },
+          {
+            "title": "EFFICIENCY OF PAGE RECLAIM",
+            "columntitle": "%vmeff",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "tps",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF SECTOR r/w",
+            "columntitle": "rd_sec/s wr_sec/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "I/O REQUESTS AND QUEUE LENGHT",
+            "columntitle": "avgrq-sz avgqu-sz",
+            "column": "1 2 7 8"
+          },
+          {
+            "title": "AVEARGE WAIT TIME",
+            "columntitle": "await",
+            "column": "1 2 9"
+          },
+          {
+            "title": "CPU PERCENTAGE of I/O",
+            "columntitle": "%util",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "H": {
+        "title": "Hugepage Utilization",
+        "data": [
+          {
+            "title": "HUGEPAGE UTILIZATION",
+            "columntitle": "kbhugfree kbhugused",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "HUGEPAGE UTILIZATION %",
+            "columntitle": "%hugused",
+            "column": "1 2 5"
+          }
+        ]
+      },
+      "n_DEV": {
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "title": "NETWORK I/O",
+            "columntitle": "rxkB/s txkB/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NETWORK STATISTICS",
+            "columntitle": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s",
+            "column": "1 2 4 5 8 9 10"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "title": "NETWORK ERROR STATISTICS",
+            "columntitle": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s",
+            "column": "1 2 4 5 6 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "n_NFS": {
+        "title": "NFS Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "read/s write/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "call/s retrans/s access/s getatt/s",
+            "column": "1 2 3 4 7 8"
+          }
+        ]
+      },
+      "n_NFSD": {
+        "title": "NFSD Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "sread/s swrite/s",
+            "column": "1 2 10 11"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "scall/s badcall/s saccess/s sgetatt/s",
+            "column": "1 2 3 4 12 13"
+          },
+          {
+            "title": "NUMBER OF NETWORK PACKETS",
+            "columntitle": "packet/s udp/s tcp/s",
+            "column": "1 2 5 6 7"
+          },
+          {
+            "title": "NUMBER OF REPLY CACHE HITS AND MISSES",
+            "columntitle": "hit/s miss/s",
+            "column": "1 2 8 9"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "title": "NETWORK SOCKET STATISTICS",
+            "columntitle": "totsck tcpsck udpsck rawsck ip-frag tcp-tw",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      },
+      "P_ALL": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%user %sys %idle",
+            "column": "1 2 4 6 13"
+          },
+          {
+            "title": "PROCESSOR ACTIVITY DETAILS",
+            "columntitle": "%nice %iowait %steal %irq %soft %guest %gnice",
+            "column": "1 2 5 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "q": {
+        "title": "Process Queue",
+        "data": [
+          {
+            "title": "QUEUE LENGTH",
+            "columntitle": "runq-sz",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF PROCESSES",
+            "columntitle": "plist-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF BLOCKED PROCESSES",
+            "columntitle": "blocked",
+            "column": "1 2 8"
+          },
+          {
+            "title": "LOAD AVERAGE",
+            "columntitle": "ldavg-1 ldavg-5 ldavg-15",
+            "column": "1 2 5 6 7"
+          }
+        ]
+      },
+      "r": {
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "title": "MEMORY UTILIZATION",
+            "columntitle": "kbmemfree kbmemused kbbuffers kbcached kbcommit",
+            "column": "1 2 3 4 6 7 8"
+          },
+          {
+            "title": "MEMORY UTILIZATION DETAILS",
+            "columntitle": "kbactive kbinact kbdirty",
+            "column": "1 2 10 11 12"
+          },
+          {
+            "title": "MEMORY UTILIZATION %",
+            "columntitle": "%memused %commit",
+            "column": "1 2 5 9"
+          }
+        ]
+      },
+      "R": {
+        "title": "Memory Statistics",
+        "data": [
+          {
+            "title": "MEMORY STATISTICS",
+            "columntitle": "frmpg/s bufpg/s campg/s",
+            "column": "1 2 3 4 5"
+          }
+        ]
+      },
+      "S": {
+        "title": "Swap Utilization",
+        "data": [
+          {
+            "title": "SWAP UTILIZATION",
+            "columntitle": "kbswpfree kbswpused kbswpcad",
+            "column": "1 2 3 4 6"
+          },
+          {
+            "title": "SWAP UTILIZATION %",
+            "columntitle": "%swpused %swpcad",
+            "column": "1 2 5 7"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "UNUSED CACHE ENTRIES",
+            "columntitle": "dentunusd",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF FILE AND INODE HANDLERS",
+            "columntitle": "file-nr inode-nr",
+            "column": "1 2 4 5"
+          },
+          {
+            "title": "NUMBER OF PSEUDO-TERMINALS",
+            "columntitle": "pty-nr",
+            "column": "1 2 6"
+          }
+        ]
+      },
+      "w": {
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "title": "PROCESS CREATION ACTIVITY",
+            "columntitle": "proc/s",
+            "column": "1 2 3"
+          },
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "cswch/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "W": {
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "title": "SWAPPING STATISTICS",
+            "columntitle": "pswpin/s pswpout/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rcvin/s xmtin/s framerr/s prtyerr/s brk/s ovrun/s",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV P_ALL"
+  },
+  "sunos_9": {
+    "options": {
+      "a": {
+        "title": "Use of File Access Routines",
+        "data": [
+          {
+            "title": "USE OF FILE ACCESS SYSTEM ROUTINES",
+            "columntitle": "iget/s namei/s dirbk/s",
+            "column": "1 2 3 4 5"
+          }
+        ]
+      },
+      "b": {
+        "title": "Buffer Activity",
+        "data": [
+          {
+            "title": "BUFFER ACTIVITY PART 1",
+            "columntitle": "bread/s bwrit/s lread/s lwrit/s pread/s pwrit/s",
+            "column": "1 2 3 4 5 6 9 10"
+          },
+          {
+            "title": "BUFFER ACTIVITY PART 2",
+            "columntitle": "%rcache %wcache",
+            "column": "1 2 7 8"
+          }
+        ]
+      },
+      "c": {
+        "title": "Statistics of System Calls",
+        "data": [
+          {
+            "title": "NUMBER OF CHARACTERS TRANSFERRED BY R/W SYSTEM CALLS",
+            "columntitle": "rchar/s wchar/s",
+            "column": "1 2 8 9"
+          },
+          {
+            "title": "NUMBER OF SYSTEM CALLS",
+            "columntitle": "scall/s",
+            "column": "1 2 3"
+          },
+          {
+            "title": "R/W FORK AND EXEC SYSTEM CALLS",
+            "columntitle": "sread/s swrit/s fork/s exec/s",
+            "column": "1 2 4 5 6 7"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "r+w/s blks/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NUMBER OF REQUESTS",
+            "columntitle": "avque",
+            "column": "1 2 5"
+          },
+          {
+            "title": "SERVICE AND WAIT TIMEi",
+            "columntitle": "avwait avserv",
+            "column": "1 2 8 9"
+          },
+          {
+            "title": "BUSY TIME",
+            "columntitle": "%busy",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "g": {
+        "title": "Paging Activities",
+        "data": [
+          {
+            "title": "PAGING ACTIVITIES",
+            "columntitle": "pgout/s ppgout/s pgfree/s pgscan/s",
+            "column": "1 2 3 4 5 6"
+          },
+          {
+            "title": "THE PERCENTAGE OF UFS INODES",
+            "columntitle": "%ufs_ipf",
+            "column": "1 2 7"
+          }
+        ]
+      },
+      "k": {
+        "title": "Kernel Memory Allocation",
+        "data": [
+          {
+            "title": "KERNEL MEMORY ALLOCATION ACTIVITIES",
+            "columntitle": "sml_mem alloc fail",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "KMA FOR LARGE MEMORY POOL",
+            "columntitle": "lg_mem alloc fail",
+            "column": "1 2 6 7 8"
+          },
+          {
+            "title": "KMA FOR OVERSIZE REQUESTS",
+            "columntitle": "ovsz_alloc fail",
+            "column": "1 2 9 10"
+          }
+        ]
+      },
+      "m": {
+        "title": "Number of System V Calls",
+        "data": [
+          {
+            "title": "NUMBER OF SYSTEM V CALLS",
+            "columntitle": "msg/s sema/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "p": {
+        "title": "Page Statistics",
+        "data": [
+          {
+            "title": "PAGE-IN REQUESTS",
+            "columntitle": "pgin/s",
+            "column": "1 2 4"
+          },
+          {
+            "title": "PAGES PAGED-IN",
+            "columntitle": "ppgin/s",
+            "column": "1 2 5"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "atch/s pflt/s vflt/s slock/s",
+            "column": "1 2 3 6 7 8"
+          }
+        ]
+      },
+      "q": {
+        "title": "Run & Swap Queue",
+        "data": [
+          {
+            "title": "RUN AND SWAP QUEUE",
+            "columntitle": "runq-sz swpq-sz",
+            "column": "1 2 3 5"
+          },
+          {
+            "title": "RUN AND SWAP QUEUE %",
+            "columntitle": "%runocc %swpocc",
+            "column": "1 2 4 6"
+          }
+        ]
+      },
+      "u": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%usr %sys %wio %idle",
+            "column": "1 2 3 4 5 6"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "STATUS OF PROCESS",
+            "columntitle": "proc-sz inod-sz file-sz lock-sz",
+            "column": "1 2 3 5 7 9"
+          },
+          {
+            "title": "STATUS OF PROCESS",
+            "columntitle": "proc-ov inod-ov file-ov",
+            "column": "1 2 4 6 8"
+          }
+        ]
+      },
+      "w": {
+        "title": "Swap & System Switching",
+        "data": [
+          {
+            "title": "NUMBER OF PROCESS SWAP IN/OUT",
+            "columntitle": "swpin/s swpot/s",
+            "column": "1 2 3 5"
+          },
+          {
+            "title": "NUMBER OF 512-BYTE UNITS TRANSFERRED FOR SWAP IN/OUT",
+            "columntitle": "bswin/s bswot/s",
+            "column": "1 2 4 6"
+          },
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "pswch/s",
+            "column": "1 2 7"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rawch/s canch/s outch/s rcvin/s xmtin/s mdmin/s",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      }
+    },
+    "special": "d"
+  },
+  "sunos_10": {
+    "options": {
+      "a": {
+        "title": "Use of File Access Routines",
+        "data": [
+          {
+            "title": "USE OF FILE ACCESS SYSTEM ROUTINES",
+            "columntitle": "iget/s namei/s dirbk/s",
+            "column": "1 2 3 4 5"
+          }
+        ]
+      },
+      "b": {
+        "title": "Buffer Activity",
+        "data": [
+          {
+            "title": "BUFFER ACTIVITY PART 1",
+            "columntitle": "bread/s bwrit/s lread/s lwrit/s pread/s pwrit/s",
+            "column": "1 2 3 4 5 6 9 10"
+          },
+          {
+            "title": "BUFFER ACTIVITY PART 2",
+            "columntitle": "%rcache %wcache",
+            "column": "1 2 7 8"
+          }
+        ]
+      },
+      "c": {
+        "title": "Statistics of System Calls",
+        "data": [
+          {
+            "title": "NUMBER OF CHARACTERS TRANSFERRED BY R/W SYSTEM CALLS",
+            "columntitle": "rchar/s wchar/s",
+            "column": "1 2 8 9"
+          },
+          {
+            "title": "NUMBER OF SYSTEM CALLS",
+            "columntitle": "scall/s",
+            "column": "1 2 3"
+          },
+          {
+            "title": "R/W FORK AND EXEC SYSTEM CALLS",
+            "columntitle": "sread/s swrit/s fork/s exec/s",
+            "column": "1 2 4 5 6 7"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "r+w/s blks/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NUMBER OF REQUESTS",
+            "columntitle": "avque",
+            "column": "1 2 5"
+          },
+          {
+            "title": "SERVICE AND WAIT TIMEi",
+            "columntitle": "avwait avserv",
+            "column": "1 2 8 9"
+          },
+          {
+            "title": "BUSY TIME",
+            "columntitle": "%busy",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "g": {
+        "title": "Paging Activities",
+        "data": [
+          {
+            "title": "PAGING ACTIVITIES",
+            "columntitle": "pgout/s ppgout/s pgfree/s pgscan/s",
+            "column": "1 2 3 4 5 6"
+          },
+          {
+            "title": "THE PERCENTAGE OF UFS INODES",
+            "columntitle": "%ufs_ipf",
+            "column": "1 2 7"
+          }
+        ]
+      },
+      "k": {
+        "title": "Kernel Memory Allocation",
+        "data": [
+          {
+            "title": "KERNEL MEMORY ALLOCATION ACTIVITIES",
+            "columntitle": "sml_mem alloc fail",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "KMA FOR LARGE MEMORY POOL",
+            "columntitle": "lg_mem alloc fail",
+            "column": "1 2 6 7 8"
+          },
+          {
+            "title": "KMA FOR OVERSIZE REQUESTS",
+            "columntitle": "ovsz_alloc fail",
+            "column": "1 2 9 10"
+          }
+        ]
+      },
+      "m": {
+        "title": "Number of System V Calls",
+        "data": [
+          {
+            "title": "NUMBER OF SYSTEM V CALLS",
+            "columntitle": "msg/s sema/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "p": {
+        "title": "Page Statistics",
+        "data": [
+          {
+            "title": "PAGE-IN REQUESTS",
+            "columntitle": "pgin/s",
+            "column": "1 2 4"
+          },
+          {
+            "title": "PAGES PAGED-IN",
+            "columntitle": "ppgin/s",
+            "column": "1 2 5"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "atch/s pflt/s vflt/s slock/s",
+            "column": "1 2 3 6 7 8"
+          }
+        ]
+      },
+      "q": {
+        "title": "Run & Swap Queue",
+        "data": [
+          {
+            "title": "RUN AND SWAP QUEUE",
+            "columntitle": "runq-sz swpq-sz",
+            "column": "1 2 3 5"
+          },
+          {
+            "title": "RUN AND SWAP QUEUE %",
+            "columntitle": "%runocc %swpocc",
+            "column": "1 2 4 6"
+          }
+        ]
+      },
+      "r": {
+        "title": "Unused Memory & Swap",
+        "data": [
+          {
+            "title": "UNUSED MEMORY AND SWAP",
+            "columntitle": "freemem freeswap",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "u": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%usr %sys %wio %idle",
+            "column": "1 2 3 4 5 6"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "STATUS OF PROCESS",
+            "columntitle": "proc-sz inod-sz file-sz lock-sz",
+            "column": "1 2 3 5 7 9"
+          },
+          {
+            "title": "STATUS OF PROCESS",
+            "columntitle": "proc-ov inod-ov file-ov",
+            "column": "1 2 4 6 8"
+          }
+        ]
+      },
+      "w": {
+        "title": "Swap & System Switching",
+        "data": [
+          {
+            "title": "NUMBER OF PROCESS SWAP IN/OUT",
+            "columntitle": "swpin/s swpot/s",
+            "column": "1 2 3 5"
+          },
+          {
+            "title": "NUMBER OF 512-BYTE UNITS TRANSFERRED FOR SWAP IN/OUT",
+            "columntitle": "bswin/s bswot/s",
+            "column": "1 2 4 6"
+          },
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "pswch/s",
+            "column": "1 2 7"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rawch/s canch/s outch/s rcvin/s xmtin/s mdmin/s",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      }
+    },
+    "special": "d"
+  },
+  "sunos_11": {
+    "options": {
+      "a": {
+        "title": "Use of File Access Routines",
+        "data": [
+          {
+            "title": "USE OF FILE ACCESS SYSTEM ROUTINES",
+            "columntitle": "iget/s namei/s dirbk/s",
+            "column": "1 2 3 4 5"
+          }
+        ]
+      },
+      "b": {
+        "title": "Buffer Activity",
+        "data": [
+          {
+            "title": "BUFFER ACTIVITY PART 1",
+            "columntitle": "bread/s bwrit/s lread/s lwrit/s pread/s pwrit/s",
+            "column": "1 2 3 4 5 6 9 10"
+          },
+          {
+            "title": "BUFFER ACTIVITY PART 2",
+            "columntitle": "%rcache %wcache",
+            "column": "1 2 7 8"
+          }
+        ]
+      },
+      "c": {
+        "title": "Statistics of System Calls",
+        "data": [
+          {
+            "title": "NUMBER OF CHARACTERS TRANSFERRED BY R/W SYSTEM CALLS",
+            "columntitle": "rchar/s wchar/s",
+            "column": "1 2 8 9"
+          },
+          {
+            "title": "NUMBER OF SYSTEM CALLS",
+            "columntitle": "scall/s",
+            "column": "1 2 3"
+          },
+          {
+            "title": "R/W FORK AND EXEC SYSTEM CALLS",
+            "columntitle": "sread/s swrit/s fork/s exec/s",
+            "column": "1 2 4 5 6 7"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "r+w/s blks/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NUMBER OF REQUESTS",
+            "columntitle": "avque",
+            "column": "1 2 5"
+          },
+          {
+            "title": "SERVICE AND WAIT TIMEi",
+            "columntitle": "avwait avserv",
+            "column": "1 2 8 9"
+          },
+          {
+            "title": "BUSY TIME",
+            "columntitle": "%busy",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "g": {
+        "title": "Paging Activities",
+        "data": [
+          {
+            "title": "PAGING ACTIVITIES",
+            "columntitle": "pgout/s ppgout/s pgfree/s pgscan/s",
+            "column": "1 2 3 4 5 6"
+          },
+          {
+            "title": "THE PERCENTAGE OF UFS INODES",
+            "columntitle": "%ufs_ipf",
+            "column": "1 2 7"
+          }
+        ]
+      },
+      "k": {
+        "title": "Kernel Memory Allocation",
+        "data": [
+          {
+            "title": "KERNEL MEMORY ALLOCATION ACTIVITIES",
+            "columntitle": "sml_mem alloc fail",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "KMA FOR LARGE MEMORY POOL",
+            "columntitle": "lg_mem alloc fail",
+            "column": "1 2 6 7 8"
+          },
+          {
+            "title": "KMA FOR OVERSIZE REQUESTS",
+            "columntitle": "ovsz_alloc fail",
+            "column": "1 2 9 10"
+          }
+        ]
+      },
+      "m": {
+        "title": "Number of System V Calls",
+        "data": [
+          {
+            "title": "NUMBER OF SYSTEM V CALLS",
+            "columntitle": "msg/s sema/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "p": {
+        "title": "Page Statistics",
+        "data": [
+          {
+            "title": "PAGE-IN REQUESTS",
+            "columntitle": "pgin/s",
+            "column": "1 2 4"
+          },
+          {
+            "title": "PAGES PAGED-IN",
+            "columntitle": "ppgin/s",
+            "column": "1 2 5"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "atch/s pflt/s vflt/s slock/s",
+            "column": "1 2 3 6 7 8"
+          }
+        ]
+      },
+      "q": {
+        "title": "Run & Swap Queue",
+        "data": [
+          {
+            "title": "RUN AND SWAP QUEUE",
+            "columntitle": "runq-sz swpq-sz",
+            "column": "1 2 3 5"
+          },
+          {
+            "title": "RUN AND SWAP QUEUE %",
+            "columntitle": "%runocc %swpocc",
+            "column": "1 2 4 6"
+          }
+        ]
+      },
+      "r": {
+        "title": "Unused Memory & Swap",
+        "data": [
+          {
+            "title": "UNUSED MEMORY AND SWAP",
+            "columntitle": "freemem freeswap",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "u": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%usr %sys %wio %idle",
+            "column": "1 2 3 4 5 6"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "STATUS OF PROCESS",
+            "columntitle": "proc-sz inod-sz file-sz lock-sz",
+            "column": "1 2 3 5 7 9"
+          },
+          {
+            "title": "STATUS OF PROCESS",
+            "columntitle": "proc-ov inod-ov file-ov",
+            "column": "1 2 4 6 8"
+          }
+        ]
+      },
+      "w": {
+        "title": "Swap & System Switching",
+        "data": [
+          {
+            "title": "NUMBER OF PROCESS SWAP IN/OUT",
+            "columntitle": "swpin/s swpot/s",
+            "column": "1 2 3 5"
+          },
+          {
+            "title": "NUMBER OF 512-BYTE UNITS TRANSFERRED FOR SWAP IN/OUT",
+            "columntitle": "bswin/s bswot/s",
+            "column": "1 2 4 6"
+          },
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "pswch/s",
+            "column": "1 2 7"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rawch/s canch/s outch/s rcvin/s xmtin/s mdmin/s",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      }
+    },
+    "special": "d"
+  },
+  "suse_8": {
+    "options": {
+      "b": {
+        "title": "I/O Rates",
+        "data": [
+          {
+            "title": "I/O TRANSACTION",
+            "columntitle": "tps rtps wtps",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "I/O TRANSFER RATE",
+            "columntitle": "bread/s bwrtn/s",
+            "column": "1 2 6 7"
+          }
+        ]
+      },
+      "B": {
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "title": "PAGING STATISTICS",
+            "columntitle": "pgpgin/s pgpgout/s",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "PAGE STATISTICS",
+            "columntitle": "activepg inadtypg inaclnpg inatarpg",
+            "column": "1 2 5 6 7 8"
+          }
+        ]
+      },
+      "c": {
+        "title": "Process Creation Activity",
+        "data": [
+          {
+            "title": "PROCESS CREATION ACTIVITY",
+            "columntitle": "proc/s",
+            "column": "1 2 3"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "tps",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF TRANSFERRED BLOCKS",
+            "columntitle": "blks/s",
+            "column": "1 2 5"
+          }
+        ]
+      },
+      "I_SUM": {
+        "title": "Interrupt Activity",
+        "data": [
+          {
+            "title": "INTERRUPT ACTIVITY",
+            "columntitle": "intr/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "n_DEV": {
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "title": "NETWORK I/O",
+            "columntitle": "rxbyt/s txbyt/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NETWORK STATISTICS",
+            "columntitle": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s",
+            "column": "1 2 4 5 8 9 10"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "title": "NETWORK ERROR STATISTICS",
+            "columntitle": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s",
+            "column": "1 2 4 5 6 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "title": "NETWORK SOCKET STATISTICS",
+            "columntitle": "totsck tcpsck udpsck rawsck ip-frag",
+            "column": "1 2 3 4 5 6 7"
+          }
+        ]
+      },
+      "U_ALL": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%user %nice %system %idle",
+            "column": "1 2 4 5 6 7"
+          }
+        ]
+      },
+      "q": {
+        "title": "Process Queue",
+        "data": [
+          {
+            "title": "QUEUE LENGTH",
+            "columntitle": "runq-sz",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF PROCESSES",
+            "columntitle": "plist-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "LOAD AVERAGE",
+            "columntitle": "ldavg-1 ldavg-5",
+            "column": "1 2 5 6"
+          }
+        ]
+      },
+      "r": {
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "title": "MEMORY UTILIZATION",
+            "columntitle": "kbmemfree kbmemused kbmemshrd kbbuffers kbcached",
+            "column": "1 2 3 4 6 7 8"
+          },
+          {
+            "title": "SWAP UTILIZATION",
+            "columntitle": "kbswpfree kbswpused",
+            "column": "1 2 9 10"
+          },
+          {
+            "title": "MEMORY AND SWAP %",
+            "columntitle": "%memused %swpused",
+            "column": "1 2 5 11"
+          }
+        ]
+      },
+      "R": {
+        "title": "Memory Statistics",
+        "data": [
+          {
+            "title": "MEMORY STATISTICS",
+            "columntitle": "frmpg/s bufpg/s shmpg/s campg/s",
+            "column": "1 2 3 4 5 6"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "UNUSED CACHE ENTRIES",
+            "columntitle": "dentunusd",
+            "column": "1 2 3"
+          },
+          {
+            "title": "USED FILE HANDLES",
+            "columntitle": "file-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "USED INODE HANDLERS",
+            "columntitle": "inode-sz",
+            "column": "1 2 6"
+          },
+          {
+            "title": "SUPER BLOCK HANDLERS",
+            "columntitle": "super-sz",
+            "column": "1 2 7"
+          },
+          {
+            "title": "ALLOCATED DISK QUOTA ENTRIES",
+            "columntitle": "dquot-sz",
+            "column": "1 2 9"
+          },
+          {
+            "title": "QUEUED RT SIGNALS",
+            "columntitle": "rtsig-sz",
+            "column": "1 2 11"
+          },
+          {
+            "title": "KERNEL TABLES %",
+            "columntitle": "%file-sz %super-sz %dquot-sz %rtsig-sz",
+            "column": "1 2 5 8 10 12"
+          }
+        ]
+      },
+      "w": {
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "cswch/s",
+            "column": "1 2 3"
+          }
+        ]
+      },
+      "W": {
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "title": "SWAPPING STATISTICS",
+            "columntitle": "pswpin/s pswpout/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rcvin/s xmtin/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV U_ALL"
+  },
+  "suse_9": {
+    "options": {
+      "b": {
+        "title": "I/O Rates",
+        "data": [
+          {
+            "title": "I/O TRANSACTION",
+            "columntitle": "tps rtps wtps",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "I/O TRANSFER RATE",
+            "columntitle": "bread/s bwrtn/s",
+            "column": "1 2 6 7"
+          }
+        ]
+      },
+      "B": {
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "title": "PAGING STATISTICS",
+            "columntitle": "pgpgin/s pgpgout/s",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "fault/s majflt/s",
+            "column": "1 2 5 6"
+          }
+        ]
+      },
+      "c": {
+        "title": "Process Creation Activity",
+        "data": [
+          {
+            "title": "PROCESS CREATION ACTIVITY",
+            "columntitle": "proc/s",
+            "column": "1 2 3"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "tps",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF SECTOR r/w",
+            "columntitle": "rd_sec/s wr_sec/s",
+            "column": "1 2 5 6"
+          }
+        ]
+      },
+      "I_SUM": {
+        "title": "Interrupt Activity",
+        "data": [
+          {
+            "title": "INTERRUPT ACTIVITY",
+            "columntitle": "intr/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "n_DEV": {
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "title": "NETWORK I/O",
+            "columntitle": "rxbyt/s txbyt/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NETWORK STATISTICS",
+            "columntitle": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s",
+            "column": "1 2 4 5 8 9 10"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "title": "NETWORK ERROR STATISTICS",
+            "columntitle": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s",
+            "column": "1 2 4 5 6 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "title": "NETWORK SOCKET STATISTICS",
+            "columntitle": "totsck tcpsck udpsck rawsck ip-frag",
+            "column": "1 2 3 4 5 6 7"
+          }
+        ]
+      },
+      "P_ALL": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%user %nice %system %iowait %idle",
+            "column": "1 2 4 5 6 7 8"
+          }
+        ]
+      },
+      "q": {
+        "title": "Process Queue",
+        "data": [
+          {
+            "title": "QUEUE LENGTH",
+            "columntitle": "runq-sz",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF PROCESSES",
+            "columntitle": "plist-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "LOAD AVERAGE",
+            "columntitle": "ldavg-1 ldavg-5 ldavg-15",
+            "column": "1 2 5 6 7"
+          }
+        ]
+      },
+      "r": {
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "title": "MEMORY UTILIZATION",
+            "columntitle": "kbmemfree kbmemused kbbuffers kbcached",
+            "column": "1 2 3 4 6 7"
+          },
+          {
+            "title": "SWAP UTILIZATION",
+            "columntitle": "kbswpfree kbswpused kbswpcad",
+            "column": "1 2 8 9 11"
+          },
+          {
+            "title": "MEMORY AND SWAP %",
+            "columntitle": "%memused %swpused",
+            "column": "1 2 5 10"
+          }
+        ]
+      },
+      "R": {
+        "title": "Memory Statistics",
+        "data": [
+          {
+            "title": "MEMORY STATISTICS",
+            "columntitle": "frmpg/s bufpg/s campg/s",
+            "column": "1 2 3 4 5"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "UNUSED CACHE ENTRIES",
+            "columntitle": "dentunusd",
+            "column": "1 2 3"
+          },
+          {
+            "title": "USED FILE HANDLES",
+            "columntitle": "file-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "USED INODE HANDLERS",
+            "columntitle": "inode-sz",
+            "column": "1 2 5"
+          },
+          {
+            "title": "SUPER BLOCK HANDLERS",
+            "columntitle": "super-sz",
+            "column": "1 2 6"
+          },
+          {
+            "title": "ALLOCATED DISK QUOTA ENTRIES",
+            "columntitle": "dquot-sz",
+            "column": "1 2 8"
+          },
+          {
+            "title": "QUEUED RT SIGNALS",
+            "columntitle": "rtsig-sz",
+            "column": "1 2 10"
+          },
+          {
+            "title": "KERNEL TABLES %",
+            "columntitle": "%super-sz %dquot-sz %rtsig-sz",
+            "column": "1 2 7 9 11"
+          }
+        ]
+      },
+      "w": {
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "cswch/s",
+            "column": "1 2 3"
+          }
+        ]
+      },
+      "W": {
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "title": "SWAPPING STATISTICS",
+            "columntitle": "pswpin/s pswpout/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rcvin/s xmtin/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV P_ALL"
+  },
+  "suse_10": {
+    "options": {
+      "b": {
+        "title": "I/O Rates",
+        "data": [
+          {
+            "title": "I/O TRANSACTION",
+            "columntitle": "tps rtps wtps",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "I/O TRANSFER RATE",
+            "columntitle": "bread/s bwrtn/s",
+            "column": "1 5 6"
+          }
+        ]
+      },
+      "B": {
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "title": "PAGING STATISTICS",
+            "columntitle": "pgpgin/s pgpgout/s",
+            "column": "1 2 3"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "fault/s majflt/s",
+            "column": "1 4 5"
+          },
+          {
+            "title": "PAGE OPERATIONS",
+            "columntitle": "pgfree/s pgscank/s pgscand/s pgsteal/s",
+            "column": "1 6 7 8 9"
+          },
+          {
+            "title": "EFFICIENCY OF PAGE RECLAIM",
+            "columntitle": "%vmeff",
+            "column": "1 10"
+          }
+        ]
+      },
+      "c": {
+        "title": "Process Creation Activity",
+        "data": [
+          {
+            "title": "PROCESS CREATION ACTIVITY",
+            "columntitle": "proc/s",
+            "column": "1 2"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "tps",
+            "column": "1 3"
+          },
+          {
+            "title": "NUMBER OF SECTOR r/w",
+            "columntitle": "rd_sec/s wr_sec/s",
+            "column": "1 4 5"
+          },
+          {
+            "title": "I/O REQUESTS AND QUEUE LENGHT",
+            "columntitle": "avgrq-sz avgqu-sz",
+            "column": "1 6 7"
+          },
+          {
+            "title": "AVEARGE WAIT TIME",
+            "columntitle": "await",
+            "column": "1 8"
+          },
+          {
+            "title": "CPU PERCENTAGE of I/O",
+            "columntitle": "%util",
+            "column": "1 10"
+          }
+        ]
+      },
+      "I_SUM": {
+        "title": "Interrupt Activity",
+        "data": [
+          {
+            "title": "INTERRUPT ACTIVITY",
+            "columntitle": "intr/s",
+            "column": "1 3"
+          }
+        ]
+      },
+      "n_DEV": {
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "title": "NETWORK I/O",
+            "columntitle": "rxkB/s txkB/s",
+            "column": "1 5 6"
+          },
+          {
+            "title": "NETWORK STATISTICS",
+            "columntitle": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s",
+            "column": "1 3 4 7 8 9"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "title": "NETWORK ERROR STATISTICS",
+            "columntitle": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s",
+            "column": "1 3 4 5 6 7 8 9 10 11"
+          }
+        ]
+      },
+      "n_NFS": {
+        "title": "NFS Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "read/s write/s",
+            "column": "1 4 5"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "call/s retrans/s access/s getatt/s",
+            "column": "1 2 3 6 7"
+          }
+        ]
+      },
+      "n_NFSD": {
+        "title": "NFSD Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "sread/s swrite/s",
+            "column": "1 9 10"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "scall/s badcall/s saccess/s sgetatt/s",
+            "column": "1 2 3 11 12"
+          },
+          {
+            "title": "NUMBER OF NETWORK PACKETS",
+            "columntitle": "packet/s udp/s tcp/s",
+            "column": "1 4 5 6"
+          },
+          {
+            "title": "NUMBER OF REPLY CACHE HITS AND MISSES",
+            "columntitle": "hit/s miss/s",
+            "column": "1 7 8"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "title": "NETWORK SOCKET STATISTICS",
+            "columntitle": "totsck tcpsck udpsck rawsck ip-frag tcp-tw",
+            "column": "1 2 3 4 5 6 7"
+          }
+        ]
+      },
+      "P_ALL": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%user %nice %system %iowait %steal %idle",
+            "column": "1 3 4 5 6 7 8"
+          }
+        ]
+      },
+      "q": {
+        "title": "Process Queue",
+        "data": [
+          {
+            "title": "QUEUE LENGTH",
+            "columntitle": "runq-sz",
+            "column": "1 2"
+          },
+          {
+            "title": "NUMBER OF PROCESSES",
+            "columntitle": "plist-sz",
+            "column": "1 3"
+          },
+          {
+            "title": "LOAD AVERAGE",
+            "columntitle": "ldavg-1 ldavg-5 ldavg-15",
+            "column": "1 4 5 6"
+          }
+        ]
+      },
+      "r": {
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "title": "MEMORY UTILIZATION",
+            "columntitle": "kbmemfree kbmemused kbbuffers kbcached",
+            "column": "1 2 3 5 6"
+          },
+          {
+            "title": "SWAP UTILIZATION",
+            "columntitle": "kbswpfree kbswpused kbswpcad",
+            "column": "1 7 8 10"
+          },
+          {
+            "title": "MEMORY AND SWAP %",
+            "columntitle": "%memused %swpused",
+            "column": "1 4 9"
+          }
+        ]
+      },
+      "R": {
+        "title": "Memory Statistics",
+        "data": [
+          {
+            "title": "MEMORY STATISTICS",
+            "columntitle": "frmpg/s bufpg/s campg/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "UNUSED CACHE ENTRIES",
+            "columntitle": "dentunusd",
+            "column": "1 2"
+          },
+          {
+            "title": "NUMBER OF FILE AND INODE HANDLERS",
+            "columntitle": "file-nr inode-nr",
+            "column": "1 3 4"
+          },
+          {
+            "title": "NUMBER OF PSEUDO-TERMINALS",
+            "columntitle": "pty-nr",
+            "column": "1 5"
+          }
+        ]
+      },
+      "w": {
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "cswch/s",
+            "column": "1 2"
+          }
+        ]
+      },
+      "W": {
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "title": "SWAPPING STATISTICS",
+            "columntitle": "pswpin/s pswpout/s",
+            "column": "1 2 3"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rcvin/s xmtin/s framerr/s prtyerr/s brk/s ovrun/s",
+            "column": "1 2 3 4 5 6 7"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV P_ALL"
+  },
+  "suse_11": {
+    "options": {
+      "b": {
+        "title": "I/O Rates",
+        "data": [
+          {
+            "title": "I/O TRANSACTION",
+            "columntitle": "tps rtps wtps",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "I/O TRANSFER RATE",
+            "columntitle": "bread/s bwrtn/s",
+            "column": "1 2 6 7"
+          }
+        ]
+      },
+      "B": {
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "title": "PAGING STATISTICS",
+            "columntitle": "pgpgin/s pgpgout/s",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "fault/s majflt/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "PAGE OPERATIONS",
+            "columntitle": "pgfree/s pgscank/s pgscand/s pgsteal/s",
+            "column": "1 2 7 8 9 10"
+          },
+          {
+            "title": "EFFICIENCY OF PAGE RECLAIM",
+            "columntitle": "%vmeff",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "tps",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF SECTOR r/w",
+            "columntitle": "rd_sec/s wr_sec/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "I/O REQUESTS AND QUEUE LENGHT",
+            "columntitle": "avgrq-sz avgqu-sz",
+            "column": "1 2 7 8"
+          },
+          {
+            "title": "AVEARGE WAIT TIME",
+            "columntitle": "await",
+            "column": "1 2 9"
+          },
+          {
+            "title": "CPU PERCENTAGE of I/O",
+            "columntitle": "%util",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "I_SUM": {
+        "title": "Interrupt Activity",
+        "data": [
+          {
+            "title": "INTERRUPT ACTIVITY",
+            "columntitle": "intr/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "n_DEV": {
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "title": "NETWORK I/O",
+            "columntitle": "rxkB/s txkB/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NETWORK STATISTICS",
+            "columntitle": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s",
+            "column": "1 2 4 5 8 9 10"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "title": "NETWORK ERROR STATISTICS",
+            "columntitle": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s",
+            "column": "1 2 4 5 6 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "n_NFS": {
+        "title": "NFS Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "read/s write/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "call/s retrans/s access/s getatt/s",
+            "column": "1 2 3 4 7 8"
+          }
+        ]
+      },
+      "n_NFSD": {
+        "title": "NFSD Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "sread/s swrite/s",
+            "column": "1 2 10 11"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "scall/s badcall/s saccess/s sgetatt/s",
+            "column": "1 2 3 4 12 13"
+          },
+          {
+            "title": "NUMBER OF NETWORK PACKETS",
+            "columntitle": "packet/s udp/s tcp/s",
+            "column": "1 2 5 6 7"
+          },
+          {
+            "title": "NUMBER OF REPLY CACHE HITS AND MISSES",
+            "columntitle": "hit/s miss/s",
+            "column": "1 2 8 9"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "title": "NETWORK SOCKET STATISTICS",
+            "columntitle": "totsck tcpsck udpsck rawsck ip-frag tcp-tw",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      },
+      "P_ALL": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%user %nice %system %iowait %steal %idle",
+            "column": "1 2 4 5 6 7 8 9"
+          }
+        ]
+      },
+      "q": {
+        "title": "Process Queue",
+        "data": [
+          {
+            "title": "QUEUE LENGTH",
+            "columntitle": "runq-sz",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF PROCESSES",
+            "columntitle": "plist-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "LOAD AVERAGE",
+            "columntitle": "ldavg-1 ldavg-5 ldavg-15",
+            "column": "1 2 5 6 7"
+          }
+        ]
+      },
+      "r": {
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "title": "MEMORY UTILIZATION",
+            "columntitle": "kbmemfree kbmemused kbbuffers kbcached kbcommit",
+            "column": "1 2 3 4 6 7 8"
+          },
+          {
+            "title": "MEMORY UTILIZATION %",
+            "columntitle": "%memused %commit",
+            "column": "1 2 5 9"
+          }
+        ]
+      },
+      "R": {
+        "title": "Memory Statistics",
+        "data": [
+          {
+            "title": "MEMORY STATISTICS",
+            "columntitle": "frmpg/s bufpg/s campg/s",
+            "column": "1 2 3 4 5"
+          }
+        ]
+      },
+      "S": {
+        "title": "Swap Utilization",
+        "data": [
+          {
+            "title": "SWAP UTILIZATION",
+            "columntitle": "kbswpfree kbswpused kbswpcad",
+            "column": "1 2 3 4 6"
+          },
+          {
+            "title": "SWAP UTILIZATION %",
+            "columntitle": "%swpused %swpcad",
+            "column": "1 2 5 7"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "UNUSED CACHE ENTRIES",
+            "columntitle": "dentunusd",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF FILE AND INODE HANDLERS",
+            "columntitle": "file-nr inode-nr",
+            "column": "1 2 4 5"
+          },
+          {
+            "title": "NUMBER OF PSEUDO-TERMINALS",
+            "columntitle": "pty-nr",
+            "column": "1 2 6"
+          }
+        ]
+      },
+      "w": {
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "title": "PROCESS CREATION ACTIVITY",
+            "columntitle": "proc/s",
+            "column": "1 2 3"
+          },
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "cswch/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "W": {
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "title": "SWAPPING STATISTICS",
+            "columntitle": "pswpin/s pswpout/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rcvin/s xmtin/s framerr/s prtyerr/s brk/s ovrun/s",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV P_ALL"
+  },
+  "suse_12": {
+    "options": {
+      "b": {
+        "title": "I/O Rates",
+        "data": [
+          {
+            "title": "I/O TRANSACTION",
+            "columntitle": "tps rtps wtps",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "I/O TRANSFER RATE",
+            "columntitle": "bread/s bwrtn/s",
+            "column": "1 2 6 7"
+          }
+        ]
+      },
+      "B": {
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "title": "PAGING STATISTICS",
+            "columntitle": "pgpgin/s pgpgout/s",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "fault/s majflt/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "PAGE OPERATIONS",
+            "columntitle": "pgfree/s pgscank/s pgscand/s pgsteal/s",
+            "column": "1 2 7 8 9 10"
+          },
+          {
+            "title": "EFFICIENCY OF PAGE RECLAIM",
+            "columntitle": "%vmeff",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF TRANSFERS",
+            "columntitle": "tps",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF SECTOR r/w",
+            "columntitle": "rd_sec/s wr_sec/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "I/O REQUESTS AND QUEUE LENGHT",
+            "columntitle": "avgrq-sz avgqu-sz",
+            "column": "1 2 7 8"
+          },
+          {
+            "title": "AVEARGE WAIT TIME",
+            "columntitle": "await",
+            "column": "1 2 9"
+          },
+          {
+            "title": "CPU PERCENTAGE of I/O",
+            "columntitle": "%util",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "H": {
+        "title": "Hugepage Utilization",
+        "data": [
+          {
+            "title": "HUGEPAGE UTILIZATION",
+            "columntitle": "kbhugfree kbhugused",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "HUGEPAGE UTILIZATION %",
+            "columntitle": "%hugused",
+            "column": "1 2 5"
+          }
+        ]
+      },
+      "n_DEV": {
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "title": "NETWORK I/O",
+            "columntitle": "rxkB/s txkB/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NETWORK STATISTICS",
+            "columntitle": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s",
+            "column": "1 2 4 5 8 9 10"
+          },
+          {
+            "title": "NETWORK UTILIZATION %",
+            "columntitle": "%ifutil",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "title": "NETWORK ERROR STATISTICS",
+            "columntitle": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s",
+            "column": "1 2 4 5 6 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "n_NFS": {
+        "title": "NFS Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "read/s write/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "call/s retrans/s access/s getatt/s",
+            "column": "1 2 3 4 7 8"
+          }
+        ]
+      },
+      "n_NFSD": {
+        "title": "NFSD Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "sread/s swrite/s",
+            "column": "1 2 10 11"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "scall/s badcall/s saccess/s sgetatt/s",
+            "column": "1 2 3 4 12 13"
+          },
+          {
+            "title": "NUMBER OF NETWORK PACKETS",
+            "columntitle": "packet/s udp/s tcp/s",
+            "column": "1 2 5 6 7"
+          },
+          {
+            "title": "NUMBER OF REPLY CACHE HITS AND MISSES",
+            "columntitle": "hit/s miss/s",
+            "column": "1 2 8 9"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "title": "NETWORK SOCKET STATISTICS",
+            "columntitle": "totsck tcpsck udpsck rawsck ip-frag tcp-tw",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      },
+      "P_ALL": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%user %sys %idle",
+            "column": "1 2 4 6 13"
+          },
+          {
+            "title": "PROCESSOR ACTIVITY DETAILS",
+            "columntitle": "%nice %iowait %steal %irq %soft %guest %gnice",
+            "column": "1 2 5 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "q": {
+        "title": "Process Queue",
+        "data": [
+          {
+            "title": "QUEUE LENGTH",
+            "columntitle": "runq-sz",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF PROCESSES",
+            "columntitle": "plist-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF BLOCKED PROCESSES",
+            "columntitle": "blocked",
+            "column": "1 2 8"
+          },
+          {
+            "title": "LOAD AVERAGE",
+            "columntitle": "ldavg-1 ldavg-5 ldavg-15",
+            "column": "1 2 5 6 7"
+          }
+        ]
+      },
+      "r": {
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "title": "MEMORY UTILIZATION",
+            "columntitle": "kbmemfree kbmemused kbbuffers kbcached kbcommit",
+            "column": "1 2 3 4 6 7 8"
+          },
+          {
+            "title": "MEMORY UTILIZATION DETAILS",
+            "columntitle": "kbactive kbinact kbdirty",
+            "column": "1 2 10 11 12"
+          },
+          {
+            "title": "MEMORY UTILIZATION %",
+            "columntitle": "%memused %commit",
+            "column": "1 2 5 9"
+          }
+        ]
+      },
+      "R": {
+        "title": "Memory Statistics",
+        "data": [
+          {
+            "title": "MEMORY STATISTICS",
+            "columntitle": "frmpg/s bufpg/s campg/s",
+            "column": "1 2 3 4 5"
+          }
+        ]
+      },
+      "S": {
+        "title": "Swap Utilization",
+        "data": [
+          {
+            "title": "SWAP UTILIZATION",
+            "columntitle": "kbswpfree kbswpused kbswpcad",
+            "column": "1 2 3 4 6"
+          },
+          {
+            "title": "SWAP UTILIZATION %",
+            "columntitle": "%swpused %swpcad",
+            "column": "1 2 5 7"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "UNUSED CACHE ENTRIES",
+            "columntitle": "dentunusd",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF FILE AND INODE HANDLERS",
+            "columntitle": "file-nr inode-nr",
+            "column": "1 2 4 5"
+          },
+          {
+            "title": "NUMBER OF PSEUDO-TERMINALS",
+            "columntitle": "pty-nr",
+            "column": "1 2 6"
+          }
+        ]
+      },
+      "w": {
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "title": "PROCESS CREATION ACTIVITY",
+            "columntitle": "proc/s",
+            "column": "1 2 3"
+          },
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "cswch/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "W": {
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "title": "SWAPPING STATISTICS",
+            "columntitle": "pswpin/s pswpout/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rcvin/s xmtin/s framerr/s prtyerr/s brk/s ovrun/s",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV P_ALL"
+  },
+  "ubuntu_18": {
+    "options": {
+      "b": {
+        "title": "I/O Rates",
+        "data": [
+          {
+            "title": "I/O TRANSACTION",
+            "columntitle": "tps rtps wtps",
+            "column": "1 2 3 4 5"
+          },
+          {
+            "title": "I/O TRANSFER RATE",
+            "columntitle": "bread/s bwrtn/s",
+            "column": "1 2 6 7"
+          }
+        ]
+      },
+      "B": {
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "title": "PAGING STATISTICS",
+            "columntitle": "pgpgin/s pgpgout/s",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "PAGE FAULTS",
+            "columntitle": "fault/s majflt/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "PAGE OPERATIONS",
+            "columntitle": "pgfree/s pgscank/s pgscand/s pgsteal/s",
+            "column": "1 2 7 8 9 10"
+          },
+          {
+            "title": "EFFICIENCY OF PAGE RECLAIM",
+            "columntitle": "%vmeff",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "d": {
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF KB TRANSFERS",
+            "columntitle": "tps",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF KB r/w",
+            "columntitle": "rkB/s wkB/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "I/O AVERAGE SIZE(KB) AND QUEUE LENGHT OF I/O REQUESTS",
+            "columntitle": "areq-sz aqu-sz",
+            "column": "1 2 7 8"
+          },
+          {
+            "title": "AVEARGE WAIT TIME",
+            "columntitle": "await",
+            "column": "1 2 9"
+          },
+          {
+            "title": "CPU PERCENTAGE of I/O",
+            "columntitle": "%util",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "H": {
+        "title": "Hugepage Utilization",
+        "data": [
+          {
+            "title": "HUGEPAGE UTILIZATION",
+            "columntitle": "kbhugfree kbhugused",
+            "column": "1 2 3 4"
+          },
+          {
+            "title": "HUGEPAGE UTILIZATION %",
+            "columntitle": "%hugused",
+            "column": "1 2 5"
+          }
+        ]
+      },
+      "n_DEV": {
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "title": "NETWORK I/O",
+            "columntitle": "rxkB/s txkB/s",
+            "column": "1 2 6 7"
+          },
+          {
+            "title": "NETWORK STATISTICS",
+            "columntitle": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s",
+            "column": "1 2 4 5 8 9 10"
+          },
+          {
+            "title": "UTILIZATION (%)",
+            "columntitle": "%ifutil",
+            "column": "1 2 11"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "title": "NETWORK ERROR STATISTICS",
+            "columntitle": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s",
+            "column": "1 2 4 5 6 7 8 9 10 11 12"
+          }
+        ]
+      },
+      "n_NFS": {
+        "title": "NFS Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "read/s write/s",
+            "column": "1 2 5 6"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "call/s retrans/s access/s getatt/s",
+            "column": "1 2 3 4 7 8"
+          }
+        ]
+      },
+      "n_NFSD": {
+        "title": "NFSD Statistics",
+        "data": [
+          {
+            "title": "NUMBER OF RPC R/W",
+            "columntitle": "sread/s swrite/s",
+            "column": "1 2 10 11"
+          },
+          {
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "columntitle": "scall/s badcall/s saccess/s sgetatt/s",
+            "column": "1 2 3 4 12 13"
+          },
+          {
+            "title": "NUMBER OF NETWORK PACKETS",
+            "columntitle": "packet/s udp/s tcp/s",
+            "column": "1 2 5 6 7"
+          },
+          {
+            "title": "NUMBER OF REPLY CACHE HITS AND MISSES",
+            "columntitle": "hit/s miss/s",
+            "column": "1 2 8 9"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "title": "NETWORK SOCKET STATISTICS",
+            "columntitle": "totsck tcpsck udpsck rawsck ip-frag tcp-tw",
+            "column": "1 2 3 4 5 6 7 8"
+          }
+        ]
+      },
+      "P_ALL": {
+        "title": "Processor Activity",
+        "data": [
+          {
+            "title": "PROCESSOR ACTIVITY",
+            "columntitle": "%user %system %idle",
+            "column": "1 2 4 6 9"
+          },
+          {
+            "title": "PROCESSOR ACTIVITY DETAILS",
+            "columntitle": "%nice %iowait %steal",
+            "column": "1 2 5 7 8"
+          }
+        ]
+      },
+      "q": {
+        "title": "Process Queue",
+        "data": [
+          {
+            "title": "QUEUE LENGTH",
+            "columntitle": "runq-sz",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF PROCESSES",
+            "columntitle": "plist-sz",
+            "column": "1 2 4"
+          },
+          {
+            "title": "NUMBER OF BLOCKED PROCESSES",
+            "columntitle": "blocked",
+            "column": "1 2 8"
+          },
+          {
+            "title": "LOAD AVERAGE",
+            "columntitle": "ldavg-1 ldavg-5 ldavg-15",
+            "column": "1 2 5 6 7"
+          }
+        ]
+      },
+      "r": {
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "title": "MEMORY UTILIZATION",
+            "columntitle": "kbmemfree kbavail kbmemused kbbuffers kbcached kbcommit",
+            "column": "1 2 3 4 5 7 8 9"
+          },
+          {
+            "title": "MEMORY UTILIZATION DETAILS",
+            "columntitle": "kbactive kbinact kbdirty",
+            "column": "1 2 11 12 13"
+          },
+          {
+            "title": "MEMORY UTILIZATION %",
+            "columntitle": "%memused %commit",
+            "column": "1 2 6 10"
+          }
+        ]
+      },
+      "S": {
+        "title": "Swap Utilization",
+        "data": [
+          {
+            "title": "SWAP UTILIZATION",
+            "columntitle": "kbswpfree kbswpused kbswpcad",
+            "column": "1 2 3 4 6"
+          },
+          {
+            "title": "SWAP UTILIZATION %",
+            "columntitle": "%swpused %swpcad",
+            "column": "1 2 5 7"
+          }
+        ]
+      },
+      "v": {
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "title": "UNUSED CACHE ENTRIES",
+            "columntitle": "dentunusd",
+            "column": "1 2 3"
+          },
+          {
+            "title": "NUMBER OF FILE AND INODE HANDLERS",
+            "columntitle": "file-nr inode-nr",
+            "column": "1 2 4 5"
+          },
+          {
+            "title": "NUMBER OF PSEUDO-TERMINALS",
+            "columntitle": "pty-nr",
+            "column": "1 2 6"
+          }
+        ]
+      },
+      "w": {
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "title": "PROCESS CREATION ACTIVITY",
+            "columntitle": "proc/s",
+            "column": "1 2 3"
+          },
+          {
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "columntitle": "cswch/s",
+            "column": "1 2 4"
+          }
+        ]
+      },
+      "W": {
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "title": "SWAPPING STATISTICS",
+            "columntitle": "pswpin/s pswpout/s",
+            "column": "1 2 3 4"
+          }
+        ]
+      },
+      "y": {
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "title": "TTY DEVICE ACTIVITY",
+            "columntitle": "rcvin/s txmtin/s framerr/s prtyerr/s brk/s ovrun/s",
+            "column": "1 2 4 5 6 7 8 9"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV P_ALL y"
+  }
+}
