@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="sidebar">
+    <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+        <tr style="border-bottom: 1px solid #D0D0D0;">
+            <td class="tabletite" style="width:200px;"><h7>Host</h7></td>
+            <td class="tabletite" style="width:80px;"><h7>OS</h7></td>
+            <td class="tabletite" style="width:140px;"><h7>Entry date</h7></td>
+        </tr>
+    {% for host in hosts %}
+        <td style="width:200px;">
+        <a href="{{ url_for('post', host_id=host['id']) }}">
+            <h8>{{ host['name'] }}</h8>
+        </a>
+        </td>
+        <td style="width:80px;">
+        <a href="{{ url_for('edit', id=host['id']) }}">
+            <span class="badge badge-warning">{{ host['os'] }}</span>
+        </a>
+        </td>
+        <td style="width:140px;">
+        <span class="badge badge-primary">{{ host['date'] }}</span>
+        </td>
+        </tr>
+    {% endfor %}
+    </table>
+</div>
+<div class="mainplot">
+        <b>
+            <u>
+                <span style="font-size:10pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">COLLECTING SAR DATA</span>
+            </u>
+        </b>
+        <br>
+        <span style="font-size:8pt;font-family:&quot;Arial&quot;,&quot;sans-serif&quot;">
+        <br>
+        1. Use sar2ascii to generate a report:
+        <ul>
+            <li>Download following tool to collect sar data from servers: <a href="/static/sar2ascii.tar">sar2ascii.tar</a>.</li>
+            <li>Untar it on the server which you will examine performance data.</li>
+            <li>For HPUX servers run "sh sar2ascii".</li>
+            <li>For Linux or Sun Solaris servers run "bash sar2ascii".</li>
+            <li>It will create the report with name sar2html-hostname-date.tar.gz under /tmp directory.</li>
+            <li>Click "NEW" button, browse and select the report, click "Upload report" button to upload the data.</li>
+            <li>Or simply type "sar2html -m {sar2html report}" at command prompt.</li>
+        </ul>2. Use built in report generator:
+        <ul>
+            <li>Click "NEW" button, enter ip address of host, user name and password and click "Capture report" button.</li>
+            <li>Or simply type "sar2html -a [host ip] [user name] [password]" at command prompt.</li>
+        </ul>
+        NOTE: If sar data is not available even it is installed you need to add following lines to crontab:
+        <br>
+        HP-UX:
+        <ul>
+            0,10,20,30,40,50 * * * * /usr/lbin/sa/sa1
+            <br>
+            5 18 * * * /usr/lbin/sa/sa2 -A
+            <br>
+        </ul>
+        SOLARIS:
+        <ul>
+            0,10,20,30,40,50 * * * * /usr/lib/sa/sa1
+            <br>
+            5 18 * * * /usr/lib/sa/sa2 -A
+            <br>
+        </ul>
+    </span>
+</div>
+{% endblock %}
