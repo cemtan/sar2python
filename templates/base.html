@@ -4,24 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Lines for Slider
-    <link rel="stylesheet" href="/static/ion.rangeSlider.min.css"/>
-    <script src="/static/jquery.min.js"></script>
-    <script src="/static/ion.rangeSlider.min.js"></script>
-    -->
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/static/css/s2style.css">
-
-    <!-- Import Vega 3 & Vega-Lite 2 (does not have to be from CDN)
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-tooltip@0.16.0/build/vega-tooltip.min.js"></script>
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/vega@5.4.0/build/vega.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@3.3.0/build/vega-lite.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@4.2.0/build/vega-embed.js"></script>
-    -->
+    <script src="/static/jquery.min.js"></script>
 
     <title>{% block title %} {% endblock %}</title>
   </head>
@@ -29,7 +13,19 @@
     <div class="navbar">
       <a href="{{ url_for('index')}}" style="font-size:18px"><b>sar2html</b></a>
       <a href="#">About</a>
-      <a href="{{url_for('create')}}">New Entry</a>
+      <!-- <a href="{{url_for('create')}}">New Host</a> -->
+      <form id="form" method=post enctype=multipart/form-data>
+        <div class="box">
+            <input type="file" name="file" id="file" class="inputfile inputfile-3" data-multiple-caption="{count} files selected" multiple />
+            <label for="file">New Host</label>
+            <script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+            <script>
+                document.getElementById("file").onchange = function() {
+                    document.getElementById("form").submit();
+                };
+            </script>
+        </div>
+        </form>
     </div>
     <div class="wrapper">
           {% block content %} {% endblock %}
