@@ -1,8 +1,11 @@
 import sqlite3
 import json
 import os
+import shutil
+import tarfile
 from flask import Flask, render_template, request, url_for, flash, redirect, jsonify
 from werkzeug.exceptions import abort
+from werkzeug.utils import secure_filename
 import altair as alt
 import pandas as pd
 import numpy as np
@@ -50,6 +53,60 @@ def initializeDb ():
                     s2cur.close()
                     s2con.close()
 
+def updateDb (s2filename, s2dir):
+    s2tmp = s2dir + '/' + s2filename.split('.')[0]
+    with tarfile.open(s2dir + '/' + s2filename) as tar:
+        tar.extractall(path=s2tmp)
+    for s2os in os.listdir(s2tmp + '/sar2html'):
+        for s2host in os.listdir(s2tmp + '/sar2html/%s' % s2os):
+            s2special = s2def[s2os.lower()]['special'].split(sep=" ")
+            for (s2param, defs) in s2def[s2os.lower()]['options'].items():
+                for metric in defs['data']:
+                    s2table = defs['alias'] + "." + metric["id"]
+                    s2datafile = s2param + "." + metric["id"]
+                    for s2file in os.listdir(s2tmp + '/sar2html/%s/%s/report' % (s2os,s2host)):
+                        if s2file.startswith(s2datafile):
+                            s2df = pd.read_csv(s2tmp + '/sar2html/%s/%s/report/%s' % (s2os,s2host,s2file), sep=" ", header=None)
+                            s2dftime = s2df[0].str.replace('.','-',regex=True) + " " + s2df[1]
+                            s2df[1] = s2dftime
+                            s2df[0] = s2host
+                            for column in s2df.loc[:,2:]:
+                                s2df[column] = s2df[column].astype(str)
+                                s2df[column] = s2df[column].str.replace(',','.',regex=True)
+                                s2df[column] = s2df[column].astype(float)
+                            if s2param in s2special:
+                                s2dev = s2file.split(sep="--")[1]
+                                s2df.insert(2,'dev',s2dev,True)
+                            try:
+                                s2con = sqlite3.connect('data/db/%s.db' % s2os.lower())
+                                s2cur =  s2con.cursor()
+                                sql_command = '''SELECT * FROM "{}"'''.format(s2table)
+                                s2cur.execute(sql_command)
+                                s2col = list(map(lambda x: x[0], s2cur.description))
+                                s2df.columns = s2col
+                                s2df.to_sql(s2table, s2con, if_exists = 'append', index = False)
+                            except sqlite3.Error as error:
+                                print("Error while connecting to sqlite", error)
+                            finally:
+                                if (s2con):
+                                    s2cur.close()
+                                    s2con.close()
+            try:
+                s2con = sqlite3.connect('data/db/hosts.db')
+                s2cur =  s2con.cursor()
+                sql_command = '''INSERT INTO "hosts" (name, os) VALUES("{}", "{}")'''.format(s2host, s2os.lower())
+                s2cur.execute(sql_command)
+                s2con.commit()
+            except sqlite3.Error as error:
+                print("Error while connecting to sqlite", error)
+            finally:
+                if (s2con):
+                    s2cur.close()
+                    s2con.close()
+    shutil.rmtree(s2tmp)
+    os.remove(s2dir + '/' + s2filename)
+
+
 def getPlot(source, dev, init, title):
     label = alt.selection(type='single', nearest=True, on='mouseover',
                             fields=['date'], empty='none')
@@ -60,8 +117,8 @@ def getPlot(source, dev, init, title):
         selectBox = alt.binding_select(options=list(source['dev'].unique()), name="Device ")
         drop = alt.selection_single(name='Select', fields=['dev'], bind=selectBox, init={'dev': init})
         base = alt.Chart(source, title='{}'.format(title)).mark_line(interpolate='basis').encode(
-            x='date:T',
-            y='value:Q',
+            x = 'date:T',
+            y = 'value:Q',
             color='variable:N',
             opacity=alt.condition(selection, alt.value(1), alt.value(0.2))
         ).transform_filter(
@@ -149,7 +206,13 @@ def get_host(host_id):
         abort(404)
     return host
 
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in app.config['UPLOAD_EXTENSIONS']
+
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = 'data/tmp'
+app.config['UPLOAD_EXTENSIONS'] = ['.tar', '.gz', '.tar.gz']
 app.config['SECRET_KEY'] = 'your secret key'
 alt.renderers.enable('default')
 alt.data_transformers.enable('data_server')
@@ -162,7 +225,13 @@ except:
     print('sar2def.json definition file does not exist!')
     exit(1)
 
-if not os.path.isfile('/data/db/hosts.db'):
+if not os.path.isdir('data'):
+    os.mkdir('data')
+if not os.path.isdir('data/db'):
+    os.mkdir('data/db')
+if not os.path.isdir('data/tmp'):
+    os.mkdir('data/tmp')
+if not os.path.isfile('data/db/hosts.db'):
     initializeDb()
 
 @app.route('/')
@@ -172,7 +241,21 @@ def index():
     conn.close()
     return render_template('index.html', hosts=hosts)
 
+@app.route('/', methods=['POST'])
+def upload_files():
+    print('hey')
+    uploaded_file = request.files['file']
+    filename = secure_filename(uploaded_file.filename)
+    if filename != '':
+        file_ext = os.path.splitext(filename)[1]
+        if file_ext not in app.config['UPLOAD_EXTENSIONS']:
+            abort(400)
+        uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+        
+        updateDb(filename, app.config['UPLOAD_FOLDER'])
 
+    return redirect(url_for('index'))
+    
 @app.route('/<int:host_id>', methods=('GET', 'POST'))
 def post(host_id):
     conn = get_db_connection('hosts.db')
@@ -245,20 +328,17 @@ def post(host_id):
 @app.route('/create', methods=('GET', 'POST'))
 def create():
     if request.method == 'POST':
-        title = request.form['title']
-        content = request.form['content']
-
-        if not title:
-            flash('Title is required!')
-        else:
-            conn = get_db_connection()
-            conn.execute('INSERT INTO posts (title, content) VALUES (?, ?)',
-                         (title, content))
-            conn.commit()
-            conn.close()
-            return redirect(url_for('index'))
-
-    return render_template('create.html')
+        uploaded_file = request.files['file']
+        filename = secure_filename(uploaded_file.filename)
+        if filename != '':
+            file_ext = os.path.splitext(filename)[1]
+            if file_ext not in app.config['UPLOAD_EXTENSIONS']:
+                abort(400)
+            uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            print('hey')
+        return redirect(url_for('index'))
+    else:
+        return render_template('create.html')
 
 
 @app.route('/<int:id>/edit', methods=('GET', 'POST'))

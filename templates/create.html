@@ -2,22 +2,56 @@
 
 {% block content %}
 <h1>{% block title %} Create a New Post {% endblock %}</h1>
+<!-- add before </body> -->
 
-<form method="post">
-    <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" name="title"
-               placeholder="Post title" class="form-control"
-               value="{{ request.form['title'] }}"></input>
-    </div>
+<form method=post enctype=multipart/form-data>
+    <input type=file name=file>
+    <input type=submit value=Upload>
+  </form>
 
-    <div class="form-group">
-        <label for="content">Content</label>
-        <textarea name="content" placeholder="Post content"
-                  class="form-control">{{ request.form['content'] }}</textarea>
-    </div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
+  <form method=post enctype=multipart/form-data>
+  <input id="input_file" type="file" style="display:none;">
+  <input type=submit value=Upload>
+  <a href="#" id="trigger-input-file">Trigger input file with the jQuery script</a>
+
+  <script>
+      $(document).ready(function(){
+  $("#trigger-input-file").click(function(){
+    $('input[type="file"]').trigger("click");
+  });
+});
+  </script>
 </form>
+
+<form id="form" method=post enctype=multipart/form-data>
+<script>(function(e,t,n){var r=e.querySelectorAll("html")[0];r.className=r.className.replace(/(^|\s)no-js(\s|$)/,"$1js$2")})(document,window,0);</script>
+
+<div class="box">
+    <input type="file" name="file" id="file" class="inputfile inputfile-3" data-multiple-caption="{count} files selected" multiple />
+    <label for="file"><span>Choose a file&hellip;</span></label>
+    <script>
+        document.getElementById("file").onchange = function() {
+            document.getElementById("form").submit();
+        };
+    </script>
+
+</div>
+</form>
+
+<form method="post" enctype=multipart/form-data>
+    <input id="upload" type="file"/>
+    <a href="{{ url_for('create')}}" id="upload_link">New host</a>
+    <script>
+        $(function(){
+            $("#upload_link").on('click', function(e){
+                e.preventDefault();
+                $("#upload:hidden").trigger('click');
+            });
+        });
+    </script>
+      <input type=submit value=Upload>
+
+</form>
+
+
 {% endblock %}

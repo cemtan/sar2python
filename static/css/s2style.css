@@ -40,10 +40,10 @@
     position: sticky;
     top: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 101;
   }
   
-  .navbar a {
+  .navbar a, label {
     float: left;
     display: block;
     color: #555;
@@ -53,7 +53,7 @@
     font-size: 17px;
   }
   
-  .navbar a:hover {
+  .navbar a, label:hover {
     background: #eee;
     color: black;
   }
@@ -73,16 +73,18 @@
     position: absolute;
 }
 .sidebar {
-  height: 100%; /* Full-height: remove this if you want "auto" height */
-  width: 450px; /* Set the width of the sidebar */
-  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-  z-index: 1; /* Stay on top */
+  height: 100%;
+  width: 450px;
+  position: fixed;
+  z-index: 1;
   top: 0; /* Stay at the top */
   left: 0;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 80px;
   padding-left:52px;
   overflow: auto;
+  /* box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1); 
+  height: 100%; */
 }
 .mainplot{
   width: -moz-calc(98% - 520px);
@@ -106,19 +108,12 @@
   font-size: 16px;
   font-weight: bold;
 }
-/* Page content */
-.content {
-  padding: 16px;
-}
 
-/* The sticky class is added to the navbar with JS when it reaches its scroll position */
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
-/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-.sticky + .content {
-  padding-top: 60px;
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
 }
