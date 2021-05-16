@@ -10,11 +10,11 @@
                 <td class="tabletite" style="width:130px;"><h7><b>Hostname</b></h7></td>
                 <td class="tabletite" style="width:290px;"><h7>{{ host['name'] }}</h7></td>
             </tr>
-            <tr style="border-bottom: 1px solid #fcf6f6;"></tr>
+            <tr style="border-bottom: 1px solid #fcf6f6;">
                 <td class="tabletite" style="width:130px;"><h7><b>Operating System</b></h7></td>
                 <td class="tabletite" style="width:290px;"><h7>{{ host['os'] }}</h7></td>
             </tr>
-            <tr style="border-bottom: 1px solid #fcf6f6;"></tr>
+            <tr style="border-bottom: 1px solid #fcf6f6;">
                 <td class="tabletite" style="width:130px;"><h7><b>Creation Date</b></h7></td>
                 <td class="tabletite" style="width:290px;"><h7>{{ host['date'] }}</h7></td>
             </tr>
@@ -52,6 +52,23 @@
     </form>
     </div>
     <br />
+    <div>
+        <form name="deleteRange" action="{{ url_for('post', host_id=host['id']) }}" method="POST">
+            <input id="dateSlider" type="hidden" name="dateSlider" value="{{ start }};{{ end }}"> 
+            <a style="color: chocolate;" href="javascript:submitform()" onClick="javascript:confirmRangeSubmit()">Delete Range</a>
+            <script>
+                function confirmRangeSubmit()
+                    {
+                    var agree=confirm("Are you sure you wish to delete the range?");
+                    if (agree)
+                        document.forms["deleteRange"].submit();
+                    else
+                        return false ;
+                    }
+            </script>
+            </form>
+    </div>
+    <br>
     <div>
         <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
         {% for title in titles %}

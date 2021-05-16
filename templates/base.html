@@ -25,7 +25,12 @@
                 };
             </script>
         </div>
-        </form>
+      </form>
+      <!--<div style="position: absolute; right: 0px; top: 50%;">
+        {% for message in get_flashed_messages() %}
+            {{ message }}
+        {% endfor %}
+    </div>-->
     </div>
     <div class="wrapper">
           {% block content %} {% endblock %}
