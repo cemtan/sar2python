@@ -80,8 +80,8 @@ def updateDb (s2filename, s2dir):
                             try:
                                 s2con = sqlite3.connect('data/db/%s.db' % s2os.lower())
                                 s2cur =  s2con.cursor()
-                                sql_command = '''SELECT * FROM "{}"'''.format(s2table)
-                                s2cur.execute(sql_command)
+                                sqlCommand = '''SELECT * FROM "{}"'''.format(s2table)
+                                s2cur.execute(sqlCommand)
                                 s2col = list(map(lambda x: x[0], s2cur.description))
                                 s2df.columns = s2col
                                 s2df.to_sql(s2table, s2con, if_exists = 'append', index = False)
@@ -94,8 +94,8 @@ def updateDb (s2filename, s2dir):
             try:
                 s2con = sqlite3.connect('data/db/hosts.db')
                 s2cur =  s2con.cursor()
-                sql_command = '''INSERT INTO "hosts" (name, os) VALUES("{}", "{}")'''.format(s2host, s2os.lower())
-                s2cur.execute(sql_command)
+                sqlCommand = '''INSERT INTO "hosts" (name, os) VALUES("{}", "{}")'''.format(s2host, s2os.lower())
+                s2cur.execute(sqlCommand)
                 s2con.commit()
             except sqlite3.Error as error:
                 print("Error while connecting to sqlite", error)
@@ -105,6 +105,24 @@ def updateDb (s2filename, s2dir):
                     s2con.close()
     shutil.rmtree(s2tmp)
     os.remove(s2dir + '/' + s2filename)
+
+def deleteFromDb (s2host, s2os):
+    try:
+        s2con = sqlite3.connect('data/db/%s.db' % s2os)
+        s2cur =  s2con.cursor()
+        for (s2param, defs) in s2def[s2os]['options'].items():
+            for metric in defs['data']:
+                s2table = defs['alias'] + "." + metric["id"]
+                sqlCommand = '''DELETE FROM "{}" WHERE name = "{}"'''.format(s2table, s2host)
+                s2cur.execute(sqlCommand)
+        s2con.commit()
+
+    except sqlite3.Error as error:
+        print("Error while connecting to sqlite", error)
+    finally:
+        if (s2con):
+            s2cur.close()
+            s2con.close()
 
 
 def getPlot(source, dev, init, title):
@@ -199,7 +217,7 @@ def get_db_connection(dbName):
 
 def get_host(host_id):
     conn = get_db_connection('hosts.db')
-    host = conn.execute('SELECT * FROM posts WHERE id = ?',
+    host = conn.execute('SELECT * FROM hosts WHERE id = ?',
                         (host_id,)).fetchone()
     conn.close()
     if host is None:
@@ -258,11 +276,7 @@ def upload_files():
     
 @app.route('/<int:host_id>', methods=('GET', 'POST'))
 def post(host_id):
-    conn = get_db_connection('hosts.db')
-    host = conn.execute('SELECT * FROM hosts WHERE id = {}'.format(host_id)).fetchone()
-    conn.close()
-    if host is None:
-        abort(404)
+    host = get_host(host_id)
     s2os = host['os']
     s2host = host['name']
     conn = sqlite3.connect('data/db/' + s2os + '.db')
@@ -363,14 +377,18 @@ def edit(id):
     return render_template('edit.html', post=post)
 
 
-@app.route('/<int:id>/delete', methods=('POST',))
-def delete(id):
-    post = get_host(id)
-    conn = get_db_connection()
-    conn.execute('DELETE FROM posts WHERE id = ?', (id,))
+@app.route('/<int:host_id>/delete', methods=['POST'])
+def delete(host_id):
+    host = get_host(host_id)
+    conn = get_db_connection('hosts.db')
+    conn.execute('DELETE FROM hosts WHERE id = ?', (host_id,))
     conn.commit()
     conn.close()
-    flash('"{}" was successfully deleted!'.format(post['title']))
+    s2os = host['os']
+    s2host = host['name']
+    deleteFromDb(s2host, s2os)
+    
+    flash('"{}" was successfully deleted!'.format(host['name']))
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
