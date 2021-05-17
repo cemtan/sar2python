@@ -114,8 +114,7 @@ def updateDb (s2filename, s2dir):
                     s2con.close()
     shutil.rmtree(s2tmp)
     os.remove(s2dir + '/' + s2filename)
-
-    flash('"{}" was successfully added!'.format(s2host))
+    return s2host
 
 def deleteFromDb (hostId, range):
     host = get_host(hostId)
@@ -279,7 +278,8 @@ def allowed_file(filename):
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'data/tmp'
 app.config['UPLOAD_EXTENSIONS'] = ['.tar', '.gz', '.tar.gz']
-app.config['SECRET_KEY'] = 'your secret key'
+app.config['DROPZONE_UPLOAD_MULTIPLE'] = True
+app.config['SECRET_KEY'] = 'sar209@dnmduf8!23jQa'
 alt.renderers.enable('default')
 alt.data_transformers.enable('data_server')
 
@@ -309,17 +309,21 @@ def index():
 
 @app.route('/', methods=['POST'])
 def upload_files():
-    print('hey')
-    uploaded_file = request.files['file']
-    filename = secure_filename(uploaded_file.filename)
-    if filename != '':
-        file_ext = os.path.splitext(filename)[1]
-        if file_ext not in app.config['UPLOAD_EXTENSIONS']:
-            abort(400)
-        uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+    hostList = []
+    uploadedFiles = request.files.getlist("file")
+    for uploadedFile in uploadedFiles:
+        fileName = secure_filename(uploadedFile.filename)
+        if fileName != '':
+            fileExt = os.path.splitext(fileName)[1]
+            if fileExt in app.config['UPLOAD_EXTENSIONS']:
+                uploadedFile.save(os.path.join(app.config['UPLOAD_FOLDER'], fileName))
+                host = updateDb(fileName, app.config['UPLOAD_FOLDER'])
+                hostList.append(host)
         
-        updateDb(filename, app.config['UPLOAD_FOLDER'])
-
+    if len(hostList) > 1:
+        flash('"{}" were successfully added!'.format(', '.join(hostList)))
+    else:
+        flash('"{}" was successfully added!'.format(', '.join(hostList)))
     return redirect(url_for('index'))
     
 @app.route('/<int:host_id>', methods=('GET', 'POST'))
