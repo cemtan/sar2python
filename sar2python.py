@@ -58,45 +58,48 @@ def updateDb (s2filename, s2dir):
     with tarfile.open(s2dir + '/' + s2filename) as tar:
         tar.extractall(path=s2tmp)
     for s2os in os.listdir(s2tmp + '/sar2html'):
-        for s2host in os.listdir(s2tmp + '/sar2html/%s' % s2os):
-            s2special = s2def[s2os.lower()]['special'].split(sep=" ")
-            for (s2param, defs) in s2def[s2os.lower()]['options'].items():
-                for metric in defs['data']:
-                    s2table = defs['alias'] + "." + metric["id"]
-                    s2datafile = s2param + "." + metric["id"]
-                    for s2file in os.listdir(s2tmp + '/sar2html/%s/%s/report' % (s2os,s2host)):
-                        if s2file.startswith(s2datafile):
-                            s2df = pd.read_csv(s2tmp + '/sar2html/%s/%s/report/%s' % (s2os,s2host,s2file), sep=" ", header=None)
-                            s2dftime = s2df[0].str.replace('.','-',regex=True) + " " + s2df[1]
-                            s2df[1] = s2dftime
-                            s2df[0] = s2host
-                            for column in s2df.loc[:,2:]:
-                                s2df[column] = s2df[column].astype(str)
-                                s2df[column] = s2df[column].str.replace(',','.',regex=True)
-                                s2df[column] = s2df[column].astype(float)
-                            if s2param in s2special:
-                                s2dev = s2file.split(sep="--")[1]
-                                s2df.insert(2,'dev',s2dev,True)
-                            try:
-                                s2con = sqlite3.connect('data/db/%s.db' % s2os.lower())
-                                s2cur =  s2con.cursor()
+        try:
+            s2con = sqlite3.connect('data/db/%s.db' % s2os.lower())
+            s2cur =  s2con.cursor()
+            for s2host in os.listdir(s2tmp + '/sar2html/%s' % s2os):
+                s2special = s2def[s2os.lower()]['special'].split(sep=" ")
+                for (s2param, defs) in s2def[s2os.lower()]['options'].items():
+                    for metric in defs['data']:
+                        s2table = defs['alias'] + "." + metric["id"]
+                        s2datafile = s2param + "." + metric["id"]
+                        for s2file in os.listdir(s2tmp + '/sar2html/%s/%s/report' % (s2os,s2host)):
+                            if s2file.startswith(s2datafile):
+                                s2df = pd.read_csv(s2tmp + '/sar2html/%s/%s/report/%s' % (s2os,s2host,s2file), sep=" ", header=None)
+                                s2dftime = s2df[0].str.replace('.','-',regex=True) + " " + s2df[1]
+                                s2df[1] = s2dftime
+                                s2df[0] = s2host
+                                for column in s2df.loc[:,2:]:
+                                    s2df[column] = s2df[column].astype(str)
+                                    s2df[column] = s2df[column].str.replace(',','.',regex=True)
+                                    s2df[column] = s2df[column].astype(float)
+                                if s2param in s2special:
+                                    s2dev = s2file.split(sep="--")[1]
+                                    s2df.insert(2,'dev',s2dev,True)
                                 sqlCommand = '''SELECT * FROM "{}"'''.format(s2table)
                                 s2cur.execute(sqlCommand)
                                 s2col = list(map(lambda x: x[0], s2cur.description))
                                 s2df.columns = s2col
                                 s2df.to_sql(s2table, s2con, if_exists = 'append', index = False)
                                 if s2param in s2special:
-                                    sqlCommand = 'DELETE FROM "{}" WHERE rowid not in (SELECT min(rowid) FROM "{}" WHERE name = "{}" GROUP BY date, name, dev)'.format(s2table, s2table, s2host)
+                                    sqlCommand = 'DELETE FROM "{}" WHERE name = "{}" and rowid not in (SELECT min(rowid) FROM "{}" WHERE name = "{}" GROUP BY date, name, dev)'.format(s2table, s2host, s2table, s2host)
                                 else:
-                                    sqlCommand = 'DELETE FROM "{}" WHERE rowid not in (SELECT min(rowid) FROM "{}" WHERE name = "{}" GROUP BY date, name)'.format(s2table, s2table, s2host)
+                                    sqlCommand = 'DELETE FROM "{}" WHERE name = "{}" and rowid not in (SELECT min(rowid) FROM "{}" WHERE name = "{}" GROUP BY date, name)'.format(s2table, s2host, s2table, s2host)
                                 s2con.execute(sqlCommand)
                                 s2con.commit()
-                            except sqlite3.Error as error:
-                                print("Error while connecting to sqlite", error)
-                            finally:
-                                if (s2con):
-                                    s2cur.close()
-                                    s2con.close()
+        except sqlite3.Error as error:
+            print("Error while connecting to sqlite", error)
+        finally:
+            if (s2con):
+                s2cur.close()
+                s2con.close()
+
+    for s2os in os.listdir(s2tmp + '/sar2html'):
+        for s2host in os.listdir(s2tmp + '/sar2html/%s' % s2os):
             try:
                 s2con = sqlite3.connect('data/db/hosts.db')
                 s2cur =  s2con.cursor()
@@ -112,6 +115,7 @@ def updateDb (s2filename, s2dir):
                 if (s2con):
                     s2cur.close()
                     s2con.close()
+
     shutil.rmtree(s2tmp)
     os.remove(s2dir + '/' + s2filename)
     return s2host
@@ -302,11 +306,12 @@ if not os.path.isfile('data/db/hosts.db'):
 
 @app.route('/')
 def index():
+    #print(request.form)
     conn = get_db_connection('hosts.db')
-    hosts = conn.execute('SELECT * FROM hosts').fetchall()
+    hosts = conn.execute('SELECT * FROM hosts ORDER by name').fetchall()
     conn.close()
     return render_template('index.html', hosts=hosts)
-
+    
 @app.route('/', methods=['POST'])
 def upload_files():
     hostList = []

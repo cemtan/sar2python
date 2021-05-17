@@ -4,31 +4,33 @@
 <div class="sidebar">
     <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
         <tr style="border-bottom: 1px solid #D0D0D0;">
-            <td class="tabletite" style="width:180px;"><h7>Host</h7></td>
-            <td class="tabletite" style="width:60px;"><h7>OS</h7></td>
-            <td class="tabletite" style="width:120px;"><h7>Entry date</h7></td>
-            <td class="tabletite" style="width:120px;"><h7>Action</h7></td>
+            <form name="sortByName" id="sortByName" action="{{ url_for('index') }}" method="POST">
+                <td class="tabletite" style="width:190px;"><h7><a href="#" onclick="document.getElementById('sortByName').submit();">Host</a></h7></td>
+            </form>
+            <form name="sortByOS" id="sortByOS" action="{{ url_for('index') }}" method="POST">
+                <td class="tabletite" style="width:70px;"><h7><a href="#" onclick="document.getElementById('sortByName').submit();">OS</a></h7></td>
+            </form>
+            <td class="tabletite" style="width:130px;"><h7>Entry date</h7></td>
+            <td class="tabletite" style="width:30px;"><h7>Action</h7></td>
         </tr>
     {% for host in hosts %}
-        <td style="width:180px;">
+        <td style="width:190px;">
         <a href="{{ url_for('post', host_id=host['id']) }}">
             <h8>{{ host['name'] }}</h8>
         </a>
         </td>
-        <td style="width:60px;">
-        <a href="{{ url_for('edit', id=host['id']) }}">
-            <span class="badge badge-warning">{{ host['os'] }}</span>
-        </a>
+        <td style="width:70px;">
+        <span class="badge badge-warning">{{ host['os'] }}</span>
         </td>
-        <td style="width:120px;">
+        <td style="width:130px;">
         <span class="badge badge-primary">{{ host['date'] }}</span>
         </td>
-        <td style="width:60px;">
-            <form name="deleteHost-{{ loop.index }}" action="{{ url_for('delete', host_id=host['id']) }}" method="POST">
+        <td style="width:30px;">
+            <form name="deleteHost-{{ loop.index }}" id="deleteHost-{{ loop.index }}" action="{{ url_for('delete', host_id=host['id']) }}" method="POST">
                 <input id="dateSlider" type="hidden" name="dateSlider" value="all"> 
-                <a style="color: chocolate;" href="javascript:submitform()" onClick="javascript:confirmHostSubmit()">Delete</a>
+                <a style="color: chocolate;" href="javascript:submitform()" onClick="javascript:confirmHostSubmit{{ loop.index }}()">Delete</a>
                 <script>
-                    function confirmHostSubmit()
+                    function confirmHostSubmit{{ loop.index }}()
                         {
                         var agree=confirm("Are you sure you wish to delete the host?");
                         if (agree)
