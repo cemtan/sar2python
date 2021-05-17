@@ -85,6 +85,12 @@ def updateDb (s2filename, s2dir):
                                 s2col = list(map(lambda x: x[0], s2cur.description))
                                 s2df.columns = s2col
                                 s2df.to_sql(s2table, s2con, if_exists = 'append', index = False)
+                                if s2param in s2special:
+                                    sqlCommand = 'DELETE FROM "{}" WHERE rowid not in (SELECT min(rowid) FROM "{}" WHERE name = "{}" GROUP BY date, name, dev)'.format(s2table, s2table, s2host)
+                                else:
+                                    sqlCommand = 'DELETE FROM "{}" WHERE rowid not in (SELECT min(rowid) FROM "{}" WHERE name = "{}" GROUP BY date, name)'.format(s2table, s2table, s2host)
+                                s2con.execute(sqlCommand)
+                                s2con.commit()
                             except sqlite3.Error as error:
                                 print("Error while connecting to sqlite", error)
                             finally:
@@ -94,9 +100,12 @@ def updateDb (s2filename, s2dir):
             try:
                 s2con = sqlite3.connect('data/db/hosts.db')
                 s2cur =  s2con.cursor()
-                sqlCommand = '''INSERT INTO "hosts" (name, os) VALUES("{}", "{}")'''.format(s2host, s2os.lower())
-                s2cur.execute(sqlCommand)
-                s2con.commit()
+                sqlCommand = 'SELECT * from "hosts" where name = "{}"'.format(s2host)
+                hostControl = s2cur.execute(sqlCommand)
+                if len(hostControl.fetchall()) == 0:
+                    sqlCommand = '''INSERT INTO "hosts" (name, os) VALUES("{}", "{}")'''.format(s2host, s2os.lower())
+                    s2cur.execute(sqlCommand)
+                    s2con.commit()
             except sqlite3.Error as error:
                 print("Error while connecting to sqlite", error)
             finally:
@@ -163,6 +172,7 @@ def deleteFromDb (hostId, range):
         return True
     else:
         return False
+
 
 def getPlot(source, dev, init, title):
     label = alt.selection(type='single', nearest=True, on='mouseover',
