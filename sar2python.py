@@ -106,7 +106,12 @@ def updateDb (s2filename, s2dir):
     shutil.rmtree(s2tmp)
     os.remove(s2dir + '/' + s2filename)
 
-def deleteFromDb (s2host, s2os):
+    flash('"{}" was successfully added!'.format(s2host))
+
+def deleteFromDb (hostId):
+    host = get_host(hostId)
+    s2os = host['os']
+    s2host = host['name']
     try:
         s2con = sqlite3.connect('data/db/%s.db' % s2os)
         s2cur =  s2con.cursor()
@@ -123,6 +128,18 @@ def deleteFromDb (s2host, s2os):
         if (s2con):
             s2cur.close()
             s2con.close()
+
+    try:
+        s2con = get_db_connection('hosts.db')
+        s2con.execute('DELETE FROM hosts WHERE id = ?', (hostId,))
+        s2con.commit()
+    except sqlite3.Error as error:
+        print("Error while connecting to sqlite", error)
+    finally:
+        if (s2con):
+            s2con.close()
+    
+    flash('"{}" was successfully deleted!'.format(host['name']))
 
 
 def getPlot(source, dev, init, title):
@@ -379,16 +396,7 @@ def edit(id):
 
 @app.route('/<int:host_id>/delete', methods=['POST'])
 def delete(host_id):
-    host = get_host(host_id)
-    conn = get_db_connection('hosts.db')
-    conn.execute('DELETE FROM hosts WHERE id = ?', (host_id,))
-    conn.commit()
-    conn.close()
-    s2os = host['os']
-    s2host = host['name']
-    deleteFromDb(s2host, s2os)
-    
-    flash('"{}" was successfully deleted!'.format(host['name']))
+    deleteFromDb(host_id)
     return redirect(url_for('index'))
 
 if __name__ == '__main__':
