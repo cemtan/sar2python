@@ -443,6 +443,12 @@ def delete(host_id):
     else:
         return redirect(url_for('post', host_id=host_id))
 
+@app.route('/<int:host_id>/deleteHost')
+def deleteHost(host_id):
+    dateRange = 'all'
+    delete = deleteFromDb(host_id, dateRange)
+    return redirect(url_for('index'))
+
 if __name__ == '__main__':
     app.run(debug=True)
 
