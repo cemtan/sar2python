@@ -25,6 +25,7 @@
         </td>
         <td style="width:60px;">
             <form name="deleteHost-{{ loop.index }}" action="{{ url_for('delete', host_id=host['id']) }}" method="POST">
+                <input id="dateSlider" type="hidden" name="dateSlider" value="all"> 
                 <a style="color: chocolate;" href="javascript:submitform()" onClick="javascript:confirmHostSubmit()">Delete</a>
                 <script>
                     function confirmHostSubmit()
