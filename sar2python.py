@@ -106,23 +106,63 @@ def updateDb (s2filename, s2dir):
     shutil.rmtree(s2tmp)
     os.remove(s2dir + '/' + s2filename)
 
-def deleteFromDb (s2host, s2os):
+    flash('"{}" was successfully added!'.format(s2host))
+
+def deleteFromDb (hostId, range):
+    host = get_host(hostId)
+    s2os = host['os']
+    s2host = host['name']
+    if not range == 'all':
+        range = range.split(';')
+        range = [datetime.utcfromtimestamp(int(i)/1000).strftime('%Y-%m-%d %H:%M:%S') for i in range]
+    else:
+        range = []
+
     try:
         s2con = sqlite3.connect('data/db/%s.db' % s2os)
         s2cur =  s2con.cursor()
         for (s2param, defs) in s2def[s2os]['options'].items():
             for metric in defs['data']:
                 s2table = defs['alias'] + "." + metric["id"]
+                if range:
+                    s2df = pd.read_sql_query('SELECT * FROM "{}" WHERE name = "{}"'.format(s2table, s2host), s2con)
+                    s2df['date'] = pd.to_datetime(s2df['date'])
+                    mask = (s2df['date'] < range[0]) | (s2df['date'] > range[1])
+                    s2df = s2df.loc[mask]
                 sqlCommand = '''DELETE FROM "{}" WHERE name = "{}"'''.format(s2table, s2host)
                 s2cur.execute(sqlCommand)
-        s2con.commit()
-
+                s2con.commit()
+                if range:
+                    if not s2df.empty:
+                        s2df.to_sql(s2table, s2con, if_exists = 'append', index = False)
+        s2df = pd.read_sql_query('SELECT * FROM "{}" WHERE name = "{}"'.format(s2def[s2os]['options']['b']['alias'] + '.1', s2host), s2con)
     except sqlite3.Error as error:
         print("Error while connecting to sqlite", error)
     finally:
         if (s2con):
             s2cur.close()
             s2con.close()
+
+    try:
+        s2con = get_db_connection('hosts.db')
+        if s2df.empty:
+            s2con.execute('DELETE FROM hosts WHERE id = ?', (hostId,))
+            s2con.commit()
+    except sqlite3.Error as error:
+        print("Error while connecting to sqlite", error)
+    finally:
+        if (s2con):
+            s2con.close()
+    
+    if range:
+        flash('Data from "{}" to "{}" of host "{}" was successfully deleted!'.format(range[0], range[1], s2host))
+    else:
+        flash('"{}" was successfully deleted!'.format(s2host))
+
+    if s2df.empty:
+        return True
+    else:
+        return False
 
 
 def getPlot(source, dev, init, title):
@@ -208,7 +248,6 @@ def getPlot(source, dev, init, title):
             description="{}".format(title)
         )
     return myplot
-
 
 def get_db_connection(dbName):
     conn = sqlite3.connect('data/db/' + dbName)
@@ -379,17 +418,12 @@ def edit(id):
 
 @app.route('/<int:host_id>/delete', methods=['POST'])
 def delete(host_id):
-    host = get_host(host_id)
-    conn = get_db_connection('hosts.db')
-    conn.execute('DELETE FROM hosts WHERE id = ?', (host_id,))
-    conn.commit()
-    conn.close()
-    s2os = host['os']
-    s2host = host['name']
-    deleteFromDb(s2host, s2os)
-    
-    flash('"{}" was successfully deleted!'.format(host['name']))
-    return redirect(url_for('index'))
+    dateRange = request.form['dateSlider']
+    delete = deleteFromDb(host_id, dateRange)
+    if delete:
+        return redirect(url_for('index'))
+    else:
+        return redirect(url_for('post', host_id=host_id))
 
 if __name__ == '__main__':
     app.run(debug=True)
