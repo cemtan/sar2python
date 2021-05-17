@@ -164,7 +164,6 @@ def deleteFromDb (hostId, range):
     else:
         return False
 
-
 def getPlot(source, dev, init, title):
     label = alt.selection(type='single', nearest=True, on='mouseover',
                             fields=['date'], empty='none')
