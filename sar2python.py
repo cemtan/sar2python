@@ -28,6 +28,7 @@ def initializeDb ():
     for (s2os, s2osDef) in s2def.items():
         if not os.path.isfile('data/db/%s.db' % s2os):
             try:
+                print("Creating database %s" % (s2os))
                 s2con = sqlite3.connect('data/db/%s.db' % s2os) 
                 s2cur =  s2con.cursor()
                 s2special = s2osDef['special'].split(sep=" ")
