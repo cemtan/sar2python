@@ -4,12 +4,8 @@
 <div class="sidebar">
     <table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
         <tr style="border-bottom: 1px solid #D0D0D0;">
-            <form name="sortByName" id="sortByName" action="{{ url_for('index') }}" method="POST">
-                <td class="tabletite" style="width:190px;"><h7><a href="#" onclick="document.getElementById('sortByName').submit();">Host</a></h7></td>
-            </form>
-            <form name="sortByOS" id="sortByOS" action="{{ url_for('index') }}" method="POST">
-                <td class="tabletite" style="width:70px;"><h7><a href="#" onclick="document.getElementById('sortByName').submit();">OS</a></h7></td>
-            </form>
+            <td class="tabletite" style="width:190px;"><h7><a href="{{ url_for('sortByName') }}">Host</a></h7></td>
+            <td class="tabletite" style="width:70px;"><h7><a href="{{ url_for('sortByOs') }}">OS</a></h7></td>
             <td class="tabletite" style="width:130px;"><h7>Entry date</h7></td>
             <td class="tabletite" style="width:30px;"><h7>Action</h7></td>
         </tr>
