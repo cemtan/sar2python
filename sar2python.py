@@ -20,7 +20,7 @@ def initializeDb ():
         sqlCommand = '''CREATE TABLE "hosts" (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, os TEXT NOT NULL)'''
         s2cur.execute(sqlCommand)
     except sqlite3.Error as error:
-        print("Error while connecting to sqlite", error)
+        flash("Error while connecting to sqlite", error)
     finally:
         if (s2con):
             s2cur.close()
@@ -47,7 +47,7 @@ def initializeDb ():
                         sqlCommand = sqlCommand[:-1] + ")"
                         s2cur.execute(sqlCommand)
             except sqlite3.Error as error:
-                print("Error while connecting to sqlite", error)
+                flash("Error while connecting to sqlite", error)
             finally:
                 if (s2con):
                     s2cur.close()
@@ -92,7 +92,7 @@ def updateDb (s2filename, s2dir):
                                 s2con.execute(sqlCommand)
                                 s2con.commit()
         except sqlite3.Error as error:
-            print("Error while connecting to sqlite", error)
+            flash("Error while connecting to sqlite", error)
         finally:
             if (s2con):
                 s2cur.close()
@@ -110,7 +110,7 @@ def updateDb (s2filename, s2dir):
                     s2cur.execute(sqlCommand)
                     s2con.commit()
             except sqlite3.Error as error:
-                print("Error while connecting to sqlite", error)
+                flash("Error while connecting to sqlite", error)
             finally:
                 if (s2con):
                     s2cur.close()
@@ -149,7 +149,7 @@ def deleteFromDb (hostId, range):
                         s2df.to_sql(s2table, s2con, if_exists = 'append', index = False)
         s2df = pd.read_sql_query('SELECT * FROM "{}" WHERE name = "{}"'.format(s2def[s2os]['options']['b']['alias'] + '.1', s2host), s2con)
     except sqlite3.Error as error:
-        print("Error while connecting to sqlite", error)
+        flash("Error while connecting to sqlite", error)
     finally:
         if (s2con):
             s2cur.close()
@@ -161,7 +161,7 @@ def deleteFromDb (hostId, range):
             s2con.execute('DELETE FROM hosts WHERE id = ?', (hostId,))
             s2con.commit()
     except sqlite3.Error as error:
-        print("Error while connecting to sqlite", error)
+        flash("Error while connecting to sqlite", error)
     finally:
         if (s2con):
             s2con.close()
@@ -292,7 +292,7 @@ try:
     s2def = json.load(data_file)
     data_file.close()
 except:
-    print('sar2def.json definition file does not exist!')
+    flash('sar2def.json definition file does not exist!')
     exit(1)
 
 if not os.path.isdir('data'):
@@ -305,10 +305,12 @@ if not os.path.isfile('data/db/hosts.db'):
     initializeDb()
 
 @app.route('/')
-def index():
-    #print(request.form)
+def index(sort='name'):
+    if 'sort' in request.args:
+        sort = request.args['sort']
+        request.args.clear
     conn = get_db_connection('hosts.db')
-    hosts = conn.execute('SELECT * FROM hosts ORDER by name').fetchall()
+    hosts = conn.execute('SELECT * FROM hosts ORDER by {}'.format(sort)).fetchall()
     conn.close()
     return render_template('index.html', hosts=hosts)
     
@@ -406,7 +408,6 @@ def create():
             if file_ext not in app.config['UPLOAD_EXTENSIONS']:
                 abort(400)
             uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-            print('hey')
         return redirect(url_for('index'))
     else:
         return render_template('create.html')
@@ -434,8 +435,8 @@ def edit(id):
     return render_template('edit.html', post=post)
 
 
-@app.route('/<int:host_id>/delete', methods=['POST'])
-def delete(host_id):
+@app.route('/<int:host_id>/deleteRange', methods=['POST'])
+def deleteRange(host_id):
     dateRange = request.form['dateSlider']
     delete = deleteFromDb(host_id, dateRange)
     if delete:
@@ -448,6 +449,14 @@ def deleteHost(host_id):
     dateRange = 'all'
     delete = deleteFromDb(host_id, dateRange)
     return redirect(url_for('index'))
+
+@app.route('/sortbyName')
+def sortByName():
+    return redirect(url_for('index', sort='name, os'))
+
+@app.route('/sortbyOs')
+def sortByOs():
+    return redirect(url_for('index', sort='os, name'))
 
 if __name__ == '__main__':
     app.run(debug=True)
