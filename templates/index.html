@@ -6,8 +6,8 @@
         <tr style="border-bottom: 1px solid #D0D0D0;">
             <td class="tabletite" style="width:190px;"><h7><a style="color: chocolate;" href="{{ url_for('sortByName') }}">Host</a></h7></td>
             <td class="tabletite" style="width:70px;"><h7><a style="color: chocolate;" href="{{ url_for('sortByOs') }}">OS</a></h7></td>
-            <td class="tabletite" style="width:130px;"><h7>Entry date</h7></td>
-            <td class="tabletite" style="width:30px;"><h7>Action</h7></td>
+            <td class="tabletite" style="width:130px;"><h7><a style="color: chocolate;" href="{{ url_for('sortByDate') }}">Entry date</a></h7></td>
+            <td class="tabletite" style="width:30px;"><h7><a style="color: chocolate;" href="{{ url_for('deleteAll') }}" onclick="return confirm('Are you sure you wish to delete all hosts?')">Action</a></h7></td>
         </tr>
     {% for host in hosts %}
         <td style="width:190px;">

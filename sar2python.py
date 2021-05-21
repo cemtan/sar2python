@@ -11,8 +11,10 @@ import altair as alt
 import pandas as pd
 import numpy as np
 from datetime import datetime
-from vega_datasets import data
 import datetime as dt
+from toolz.curried import pipe
+import threading
+import time
 
 def initializeDb ():
     try:
@@ -123,13 +125,45 @@ def updateDb (s2hostList, s2dir):
 
         shutil.rmtree(s2tmp)
         os.remove(s2dir + '/' + s2filename)
-        if len(s2List) > 1:
-            flash('"{}" were successfully added! Please refresh the page.'.format(', '.join(s2List)))
-        else:
-            flash('"{}" was successfully added! Please refresh the page.'.format(', '.join(s2List)))
+    if len(s2List) > 1:
+        flash('"{}" were successfully added!'.format(', '.join(s2List)))
+    else:
+        flash('"{}" was successfully added!'.format(', '.join(s2List)))
+
+def emptyDb ():
+    for (s2os, s2osDef) in s2def.items():
+        try:
+            s2con = sqlite3.connect('data/db/%s.db' % s2os) 
+            for (s2param, defs) in s2osDef['options'].items():
+                for metric in defs['data']:
+                    s2table = defs['alias'] + "." + metric["id"]
+                    s2con.execute('''DELETE FROM "{}"'''.format(s2table))
+                    s2con.commit()
+        except sqlite3.Error as error:
+            flash("Error while connecting to sqlite", error)
+        finally:
+            if (s2con):
+                s2con.close()
+    try:
+        s2con = getDbConnection('hosts.db')
+        s2con.execute('DELETE FROM hosts')
+        s2con.commit()
+    except sqlite3.Error as error:
+        flash("Error while connecting to sqlite", error)
+    finally:
+        if (s2con):
+            s2con.close()
+
+def deleteJson ():
+    now = time.time()
+    for f in os.listdir('static/json'):
+      if os.stat('static/json/{}'.format(f)).st_mtime < now - 300:
+        if os.path.isfile('static/json/{}'.format(f)):
+          os.remove('static/json/{}'.format(f))
+    threading.Timer(300, deleteJson).start()
 
 def deleteFromDb (hostId, range):
-    host = get_host(hostId)
+    host = getHost(hostId)
     s2os = host['os']
     s2host = host['name']
     if not range == 'all':
@@ -164,7 +198,7 @@ def deleteFromDb (hostId, range):
             s2con.close()
 
     try:
-        s2con = get_db_connection('hosts.db')
+        s2con = getDbConnection('hosts.db')
         if s2df.empty:
             s2con.execute('DELETE FROM hosts WHERE id = ?', (hostId,))
             s2con.commit()
@@ -269,13 +303,13 @@ def getPlot(source, dev, init, title):
         )
     return myplot
 
-def get_db_connection(dbName):
+def getDbConnection(dbName):
     conn = sqlite3.connect('data/db/' + dbName)
     conn.row_factory = sqlite3.Row
     return conn
 
-def get_host(host_id):
-    conn = get_db_connection('hosts.db')
+def getHost(host_id):
+    conn = getDbConnection('hosts.db')
     host = conn.execute('SELECT * FROM hosts WHERE id = ?',
                         (host_id,)).fetchone()
     conn.close()
@@ -283,9 +317,8 @@ def get_host(host_id):
         abort(404)
     return host
 
-def allowed_file(filename):
-    return '.' in filename and \
-           filename.rsplit('.', 1)[1].lower() in app.config['UPLOAD_EXTENSIONS']
+def jsonDir(data, data_dir='static/json'):
+    return pipe(data, alt.to_json(filename=data_dir + '/{prefix}-{hash}.{extension}') )
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'data/tmp'
@@ -293,7 +326,9 @@ app.config['UPLOAD_EXTENSIONS'] = ['.tar', '.gz', '.tar.gz']
 app.config['DROPZONE_UPLOAD_MULTIPLE'] = True
 app.config['SECRET_KEY'] = 'sar209@dnmduf8!23jQa'
 alt.renderers.enable('default')
-alt.data_transformers.enable('data_server')
+#alt.data_transformers.enable('data_server')
+alt.data_transformers.register('jsonDir', jsonDir)
+alt.data_transformers.enable('jsonDir', data_dir='static/json')
 
 try:
     data_file = open('conf/sar2def.json')
@@ -303,12 +338,12 @@ except:
     flash('sar2def.json definition file does not exist!')
     exit(1)
 
-if not os.path.isdir('data'):
-    os.mkdir('data')
-if not os.path.isdir('data/db'):
-    os.mkdir('data/db')
-if not os.path.isdir('data/tmp'):
-    os.mkdir('data/tmp')
+os.makedirs('data', exist_ok=True)
+os.makedirs('data/db', exist_ok=True)
+os.makedirs('data/tmp', exist_ok=True)
+os.makedirs('static/json    ', exist_ok=True)
+deleteJson()
+
 if not os.path.isfile('data/db/hosts.db'):
     initializeDb()
 
@@ -317,13 +352,13 @@ def index(sort='name'):
     if 'sort' in request.args:
         sort = request.args['sort']
         request.args.clear
-    conn = get_db_connection('hosts.db')
+    conn = getDbConnection('hosts.db')
     hosts = conn.execute('SELECT * FROM hosts ORDER by {}'.format(sort)).fetchall()
     conn.close()
     return render_template('index.html', hosts=hosts)
     
 @app.route('/', methods=['POST'])
-def upload_files():
+def uploadFiles():
     hostList = []
     uploadedFiles = request.files.getlist("file")
     for uploadedFile in uploadedFiles:
@@ -341,7 +376,7 @@ def upload_files():
     
 @app.route('/<int:host_id>', methods=('GET', 'POST'))
 def post(host_id):
-    host = get_host(host_id)
+    host = getHost(host_id)
     s2os = host['os']
     s2host = host['name']
     conn = sqlite3.connect('data/db/' + s2os + '.db')
@@ -403,44 +438,6 @@ def post(host_id):
     conn.close()
     return render_template('post.html', host=host, values=values, start=startDate, end=endDate, charts=charts, titles=titles)
 
-
-@app.route('/create', methods=('GET', 'POST'))
-def create():
-    if request.method == 'POST':
-        uploaded_file = request.files['file']
-        filename = secure_filename(uploaded_file.filename)
-        if filename != '':
-            file_ext = os.path.splitext(filename)[1]
-            if file_ext not in app.config['UPLOAD_EXTENSIONS']:
-                abort(400)
-            uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        return redirect(url_for('index'))
-    else:
-        return render_template('create.html')
-
-
-@app.route('/<int:id>/edit', methods=('GET', 'POST'))
-def edit(id):
-    post = get_host(id)
-
-    if request.method == 'POST':
-        title = request.form['title']
-        content = request.form['content']
-
-        if not title:
-            flash('Title is required!')
-        else:
-            conn = get_db_connection()
-            conn.execute('UPDATE posts SET title = ?, content = ?'
-                         ' WHERE id = ?',
-                         (title, content, id))
-            conn.commit()
-            conn.close()
-            return redirect(url_for('index'))
-
-    return render_template('edit.html', post=post)
-
-
 @app.route('/<int:host_id>/deleteRange', methods=['POST'])
 def deleteRange(host_id):
     dateRange = request.form['dateSlider']
@@ -453,7 +450,12 @@ def deleteRange(host_id):
 @app.route('/<int:host_id>/deleteHost')
 def deleteHost(host_id):
     dateRange = 'all'
-    delete = deleteFromDb(host_id, dateRange)
+    deleteFromDb(host_id, dateRange)
+    return redirect(url_for('index'))
+
+@app.route('/deleteAll')
+def deleteAll():
+    emptyDb()
     return redirect(url_for('index'))
 
 @app.route('/sortbyName')
@@ -463,6 +465,10 @@ def sortByName():
 @app.route('/sortbyOs')
 def sortByOs():
     return redirect(url_for('index', sort='os, name'))
+
+@app.route('/sortbyDate')
+def sortByDate():
+    return redirect(url_for('index', sort='date, name'))
 
 if __name__ == '__main__':
     app.run(debug=True)
