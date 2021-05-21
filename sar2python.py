@@ -341,7 +341,7 @@ except:
 os.makedirs('data', exist_ok=True)
 os.makedirs('data/db', exist_ok=True)
 os.makedirs('data/tmp', exist_ok=True)
-os.makedirs('static/json    ', exist_ok=True)
+os.makedirs('static/json', exist_ok=True)
 deleteJson()
 
 if not os.path.isfile('data/db/hosts.db'):
