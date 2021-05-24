@@ -4184,6 +4184,11 @@
           },
           {
             "id": "5",
+            "title": "AVERAGE SERVICE TIME",
+            "parameter": "svctm"
+          },
+          {
+            "id": "6",
             "title": "CPU PERCENTAGE of I/O",
             "parameter": "%util"
           }
@@ -4197,6 +4202,323 @@
             "id": "1",
             "title": "HUGEPAGE UTILIZATION",
             "parameter": "kbhugfree kbhugused"
+          },
+          {
+            "id": "2",
+            "title": "HUGEPAGE UTILIZATION %",
+            "parameter": "%hugused"
+          }
+        ]
+      },
+      "n_DEV": {
+        "alias": "NetworkIOStats",
+        "title": "Network I/O & Statistics",
+        "data": [
+          {
+            "id": "1",
+            "title": "NETWORK I/O",
+            "parameter": "rxkB/s txkB/s"
+          },
+          {
+            "id": "2",
+            "title": "NETWORK STATISTICS",
+            "parameter": "rxpck/s txpck/s rxcmp/s txcmp/s rxmcst/s"
+          },
+          {
+            "id": "3",
+            "title": "UTILIZATION (%)",
+            "parameter": "%ifutil"
+          }
+        ]
+      },
+      "n_EDEV": {
+        "alias": "NetworkErrorStats",
+        "title": "Network Error Statistics",
+        "data": [
+          {
+            "id": "1",
+            "title": "NETWORK ERROR STATISTICS",
+            "parameter": "rxerr/s txerr/s coll/s rxdrop/s txdrop/s txcarr/s rxfram/s rxfifo/s txfifo/s"
+          }
+        ]
+      },
+      "n_NFS": {
+        "alias": "NFSStats",
+        "title": "NFS Statistics",
+        "data": [
+          {
+            "id": "1",
+            "title": "NUMBER OF RPC R/W",
+            "parameter": "read/s write/s"
+          },
+          {
+            "id": "2",
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "parameter": "call/s retrans/s access/s getatt/s"
+          }
+        ]
+      },
+      "n_NFSD": {
+        "alias": "NFSDStats",
+        "title": "NFSD Statistics",
+        "data": [
+          {
+            "id": "1",
+            "title": "NUMBER OF RPC R/W",
+            "parameter": "sread/s swrite/s"
+          },
+          {
+            "id": "2",
+            "title": "NUMBER OF RPC REQUESTS AND ACCESSES",
+            "parameter": "scall/s badcall/s saccess/s sgetatt/s"
+          },
+          {
+            "id": "3",
+            "title": "NUMBER OF NETWORK PACKETS",
+            "parameter": "packet/s udp/s tcp/s"
+          },
+          {
+            "id": "4",
+            "title": "NUMBER OF REPLY CACHE HITS AND MISSES",
+            "parameter": "hit/s miss/s"
+          }
+        ]
+      },
+      "n_SOCK": {
+        "alias": "NetworkSocketStats",
+        "title": "Network Socket Statistics",
+        "data": [
+          {
+            "id": "1",
+            "title": "NETWORK SOCKET STATISTICS",
+            "parameter": "totsck tcpsck udpsck rawsck ip-frag tcp-tw"
+          }
+        ]
+      },
+      "P_ALL": {
+        "alias": "ProcessorActivity",
+        "title": "Processor Activity",
+        "data": [
+          {
+            "id": "1",
+            "title": "PROCESSOR ACTIVITY",
+            "parameter": "%user %system %idle"
+          },
+          {
+            "id": "2",
+            "title": "PROCESSOR ACTIVITY DETAILS",
+            "parameter": "%nice %iowait %steal"
+          }
+        ]
+      },
+      "q": {
+        "alias": "ProcessQueue",
+        "title": "Process Queue",
+        "data": [
+          {
+            "id": "1",
+            "title": "QUEUE LENGTH",
+            "parameter": "runq-sz"
+          },
+          {
+            "id": "2",
+            "title": "NUMBER OF PROCESSES",
+            "parameter": "plist-sz"
+          },
+          {
+            "id": "3",
+            "title": "NUMBER OF BLOCKED PROCESSES",
+            "parameter": "blocked"
+          },
+          {
+            "id": "4",
+            "title": "LOAD AVERAGE",
+            "parameter": "ldavg-1 ldavg-5 ldavg-15"
+          }
+        ]
+      },
+      "r": {
+        "alias": "MemorySwapUtils",
+        "title": "Memory & Swap Utilization",
+        "data": [
+          {
+            "id": "1",
+            "title": "MEMORY UTILIZATION",
+            "parameter": "kbmemfree kbavail kbmemused kbbuffers kbcached kbcommit"
+          },
+          {
+            "id": "2",
+            "title": "MEMORY UTILIZATION DETAILS",
+            "parameter": "kbactive kbinact kbdirty"
+          },
+          {
+            "id": "3",
+            "title": "MEMORY UTILIZATION %",
+            "parameter": "%memused %commit"
+          }
+        ]
+      },
+      "S": {
+        "alias": "SwapUtils",
+        "title": "Swap Utilization",
+        "data": [
+          {
+            "id": "1",
+            "title": "SWAP UTILIZATION",
+            "parameter": "kbswpfree kbswpused kbswpcad"
+          },
+          {
+            "id": "2",
+            "title": "SWAP UTILIZATION %",
+            "parameter": "%swpused %swpcad"
+          }
+        ]
+      },
+      "v": {
+        "alias": "KernelTables",
+        "title": "Kernel Tables",
+        "data": [
+          {
+            "id": "1",
+            "title": "UNUSED CACHE ENTRIES",
+            "parameter": "dentunusd"
+          },
+          {
+            "id": "2",
+            "title": "NUMBER OF FILE AND INODE HANDLERS",
+            "parameter": "file-nr inode-nr"
+          },
+          {
+            "id": "3",
+            "title": "NUMBER OF PSEUDO-TERMINALS",
+            "parameter": "pty-nr"
+          }
+        ]
+      },
+      "w": {
+        "alias": "SystemSwitching",
+        "title": "System Switching Activity",
+        "data": [
+          {
+            "id": "1",
+            "title": "PROCESS CREATION ACTIVITY",
+            "parameter": "proc/s"
+          },
+          {
+            "id": "2",
+            "title": "SYSTEM SWITCHING ACTIVITY",
+            "parameter": "cswch/s"
+          }
+        ]
+      },
+      "W": {
+        "alias": "SwapStats",
+        "title": "Swapping Statistics",
+        "data": [
+          {
+            "id": "1",
+            "title": "SWAPPING STATISTICS",
+            "parameter": "pswpin/s pswpout/s"
+          }
+        ]
+      },
+      "y": {
+        "alias": "TTYDevice",
+        "title": "TTY Device Activity",
+        "data": [
+          {
+            "id": "1",
+            "title": "TTY DEVICE ACTIVITY",
+            "parameter": "rcvin/s txmtin/s framerr/s prtyerr/s brk/s ovrun/s"
+          }
+        ]
+      }
+    },
+    "special": "d n_DEV n_EDEV P_ALL y"
+  },
+  "ubuntu_20": {
+    "options": {
+      "b": {
+        "alias": "IORates",
+        "title": "I/O Rates",
+        "data": [
+          {
+            "id": "1",
+            "title": "I/O TRANSACTION",
+            "parameter": "tps rtps wtps dtps"
+          },
+          {
+            "id": "2",
+            "title": "I/O TRANSFER RATE",
+            "parameter": "bread/s bwrtn/s bdscd/s"
+          }
+        ]
+      },
+      "B": {
+        "alias": "PagingStats",
+        "title": "Paging Statistics",
+        "data": [
+          {
+            "id": "1",
+            "title": "PAGING STATISTICS",
+            "parameter": "pgpgin/s pgpgout/s"
+          },
+          {
+            "id": "2",
+            "title": "PAGE FAULTS",
+            "parameter": "fault/s majflt/s"
+          },
+          {
+            "id": "3",
+            "title": "PAGE OPERATIONS",
+            "parameter": "pgfree/s pgscank/s pgscand/s pgsteal/s"
+          },
+          {
+            "id": "4",
+            "title": "EFFICIENCY OF PAGE RECLAIM",
+            "parameter": "%vmeff"
+          }
+        ]
+      },
+      "d": {
+        "alias": "IOStats",
+        "title": "Disk I/O & Statistics",
+        "data": [
+          {
+            "id": "1",
+            "title": "NUMBER OF KB TRANSFERS",
+            "parameter": "tps"
+          },
+          {
+            "id": "2",
+            "title": "NUMBER OF KB r/w/d",
+            "parameter": "rkB/s wkB/s dkB/s"
+          },
+          {
+            "id": "3",
+            "title": "I/O AVERAGE SIZE(KB) AND QUEUE LENGHT OF I/O REQUESTS",
+            "parameter": "areq-sz aqu-sz"
+          },
+          {
+            "id": "4",
+            "title": "AVEARGE WAIT TIME",
+            "parameter": "await"
+          },
+          {
+            "id": "5",
+            "title": "CPU PERCENTAGE of I/O",
+            "parameter": "%util"
+          }
+        ]
+      },
+      "H": {
+        "alias": "HugepageUtils",
+        "title": "Hugepage Utilization",
+        "data": [
+          {
+            "id": "1",
+            "title": "HUGEPAGE UTILIZATION",
+            "parameter": "kbhugfree kbhugused kbhugrsvd kbhugsurp"
           },
           {
             "id": "2",

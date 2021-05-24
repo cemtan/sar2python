@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    run: sar2python
+  name: sar2python
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: sar2python
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        run: sar2python
+    spec:
+      volumes:
+      - name: sar2python-data
+        persistentVolumeClaim:
+          claimName: sar2python-pvc
+      containers:
+      - image: cemtan/sar2python:4.0.0
+        imagePullPolicy: IfNotPresent
+        name: sar2python
+        volumeMounts:
+        - mountPath: "/sar2python/data"
+          name: sar2python-data
+      restartPolicy: Always

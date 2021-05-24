@@ -12,7 +12,7 @@
   <body>
     <div class="navbar">
       <a href="{{ url_for('index')}}" style="font-size:18px"><b>sar2html</b></a>
-      <a href="#">About</a>
+      <a href="{{ url_for('about')}}">About</a>
       <form id="form" action="{{ url_for('index') }}" method=post enctype=multipart/form-data>
         <div class="box">
             <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple="true" />
